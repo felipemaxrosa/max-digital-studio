@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/lib/site";
 import { Analytics } from "@/components/Analytics";
+import { MetaPixel } from "@/components/MetaPixel";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -60,6 +61,7 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         {children}
         <Analytics />
+        <MetaPixel />
       </body>
     </html>
   );
