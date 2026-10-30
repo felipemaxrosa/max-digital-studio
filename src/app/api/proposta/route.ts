@@ -23,7 +23,9 @@ export async function POST(req: Request) {
 
   const key = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO_EMAIL || "contato@maxdigitalstudio.com.br";
-  const from = process.env.CONTACT_FROM_EMAIL || "onboarding@resend.dev";
+  const fromEmail = process.env.CONTACT_FROM_EMAIL || "onboarding@resend.dev";
+  // Mostra "Max Digital Studio <email>" como remetente (a menos que já venha com nome).
+  const from = fromEmail.includes("<") ? fromEmail : `Max Digital Studio <${fromEmail}>`;
 
   // Sem chave configurada → o lead nunca se perde: a UI cai pro WhatsApp.
   if (!key) {
