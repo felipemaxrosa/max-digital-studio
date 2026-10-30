@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/lib/site";
+import { Analytics } from "@/components/Analytics";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -56,7 +57,10 @@ export default function RootLayout({
     >
       {/* suppressHydrationWarning: extensões de browser injetam atributos no
           <body> antes da hidratação, causando mismatch benigno. */}
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
