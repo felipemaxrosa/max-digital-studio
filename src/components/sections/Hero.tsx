@@ -87,8 +87,8 @@ export function Hero() {
               <div className="absolute right-0 top-[22%] w-[52%] [transform:rotateY(-22deg)_rotateX(8deg)]">
                 <div className="motion-safe:animate-float">
                   <PhoneMockup
-                    src="/portfolio/a-casa-barbearia-mobile.png"
-                    alt="Projeto A Casa Barbearia em dispositivo móvel"
+                    src="/portfolio/amanda-beauty-mobile.png"
+                    alt="Projeto Amanda Domingues Beauty Studio em dispositivo móvel"
                     priority
                   />
                 </div>
