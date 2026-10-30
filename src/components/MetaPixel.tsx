@@ -3,6 +3,7 @@
 import Script from 'next/script';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
+import { useConsent } from './ConsentProvider';
 
 // ID do Meta Pixel — pode ser sobrescrito por NEXT_PUBLIC_META_PIXEL_ID.
 const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || '1782315696383654';
@@ -12,20 +13,21 @@ const enabled = process.env.NODE_ENV === 'production' && Boolean(PIXEL_ID);
 
 export function MetaPixel() {
   const pathname = usePathname();
+  const { consent } = useConsent();
   const firstView = useRef(true);
 
   // O init já envia o PageView inicial; aqui cuidamos das navegações SPA.
   useEffect(() => {
-    if (!enabled) return;
+    if (!enabled || consent !== 'accepted') return;
     if (firstView.current) {
       firstView.current = false;
       return;
     }
     if (typeof window.fbq !== 'function') return;
     window.fbq('track', 'PageView');
-  }, [pathname]);
+  }, [pathname, consent]);
 
-  if (!enabled) return null;
+  if (!enabled || consent !== 'accepted') return null;
 
   return (
     <>

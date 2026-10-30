@@ -4,6 +4,8 @@ import "./globals.css";
 import { SITE } from "@/lib/site";
 import { Analytics } from "@/components/Analytics";
 import { MetaPixel } from "@/components/MetaPixel";
+import { ConsentProvider } from "@/components/ConsentProvider";
+import { CookieBanner } from "@/components/CookieBanner";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -59,9 +61,12 @@ export default function RootLayout({
       {/* suppressHydrationWarning: extensões de browser injetam atributos no
           <body> antes da hidratação, causando mismatch benigno. */}
       <body suppressHydrationWarning>
-        {children}
-        <Analytics />
-        <MetaPixel />
+        <ConsentProvider>
+          {children}
+          <Analytics />
+          <MetaPixel />
+          <CookieBanner />
+        </ConsentProvider>
       </body>
     </html>
   );

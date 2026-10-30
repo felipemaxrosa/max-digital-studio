@@ -3,6 +3,7 @@
 import Script from "next/script";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
+import { useConsent } from "./ConsentProvider";
 
 // ID do GA4 — pode ser sobrescrito por NEXT_PUBLIC_GA_ID; cai no padrão da conta.
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-Z8NH8HTECB";
@@ -12,12 +13,13 @@ const enabled = process.env.NODE_ENV === "production" && Boolean(GA_ID);
 
 export function Analytics() {
   const pathname = usePathname();
+  const { consent } = useConsent();
   const firstView = useRef(true);
 
-  // O gtag('config') já envia o page_view inicial; aqui cuidamos só das
-  // navegações client-side (SPA do App Router), pulando a montagem.
+  // Carrega só com consentimento aceito. O gtag('config') envia o page_view
+  // inicial; aqui cuidamos das navegações SPA, pulando a 1ª execução.
   useEffect(() => {
-    if (!enabled) return;
+    if (!enabled || consent !== "accepted") return;
     if (firstView.current) {
       firstView.current = false;
       return;
@@ -28,9 +30,9 @@ export function Analytics() {
       page_location: window.location.href,
       page_title: document.title,
     });
-  }, [pathname]);
+  }, [pathname, consent]);
 
-  if (!enabled) return null;
+  if (!enabled || consent !== "accepted") return null;
 
   return (
     <>

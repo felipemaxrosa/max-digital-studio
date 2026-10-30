@@ -95,7 +95,13 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-[var(--color-border-glass)] pt-6 text-center">
+        <div className="mt-12 flex flex-col items-center gap-3 border-t border-[var(--color-border-glass)] pt-6 text-center">
+          <Link
+            href="/privacidade"
+            className="font-mono text-xs text-[var(--color-muted)] transition-colors hover:text-[var(--color-ink)]"
+          >
+            Política de Privacidade
+          </Link>
           <p className="font-mono text-xs text-[var(--color-muted)]/70">{FOOTER.signature}</p>
         </div>
       </div>
