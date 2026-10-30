@@ -33,7 +33,7 @@ export function Footer() {
           {/* Marca */}
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-2.5" aria-label="Max Digital Studio — Início">
-              <LogoMark id="footer" className="h-8 w-8" />
+              <LogoMark className="h-7 w-auto" />
               <span className="flex flex-col leading-none">
                 <span className="font-display text-lg font-bold tracking-tight text-[var(--color-ink)]">MAX</span>
                 <span className="font-mono text-[0.55rem] uppercase tracking-[0.25em] text-[var(--color-muted)]">

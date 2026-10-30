@@ -23,7 +23,7 @@ export function Founder() {
           <SectionReveal delay={120}>
             <div className="relative overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border-glass)] bg-[var(--color-slate)]/60 p-8 text-center">
               <RadialGlow className="inset-0 m-auto h-40 w-40" color="rgba(56,189,248,0.25)" />
-              <LogoMark id="founder-mark" className="mx-auto h-14 w-14 drop-shadow-[0_0_24px_rgba(56,189,248,0.4)]" />
+              <LogoMark className="mx-auto h-12 w-auto drop-shadow-[0_0_24px_rgba(56,189,248,0.4)]" />
               <div className="mt-6 bg-[linear-gradient(90deg,#2563EB,#38BDF8)] bg-clip-text text-5xl font-bold text-transparent">
                 {SITE.founderYears}+
               </div>

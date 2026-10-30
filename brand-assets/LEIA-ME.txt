@@ -1,0 +1,8 @@
+Jogue aqui TODOS os arquivos da identidade visual (qualquer formato):
+SVG, PNG, ICO, PDF, AI, JPG — o que você tiver.
+
+Não precisa renomear nem organizar. Eu analiso, escolho os melhores,
+otimizo e conecto no site (símbolo "M", lockup, favicon/ícone, OG).
+
+Mais úteis, se tiver: SVG do símbolo "M" (vetor), SVG/PNG transparente
+do lockup horizontal, e um favicon/ícone (.ico ou PNG 512px transparente).

@@ -65,14 +65,14 @@ export function Hero() {
 
           {/* Logo animado em painel de vidro */}
           <div className="relative flex items-center justify-center">
-            <div className="relative aspect-square w-full max-w-sm rounded-[var(--radius-card)] border border-[var(--color-border-glass)] bg-gradient-to-b from-white/[0.05] to-transparent p-12 backdrop-blur-sm">
+            <div className="relative flex aspect-square w-full max-w-sm items-center justify-center rounded-[var(--radius-card)] border border-[var(--color-border-glass)] bg-gradient-to-b from-white/[0.05] to-transparent p-12 backdrop-blur-sm">
               <RadialGlow
                 className="inset-0 m-auto h-[65%] w-[65%] motion-safe:animate-glow"
                 color="rgba(56,189,248,0.4)"
               />
               <LogoMark
-                id="hero"
-                className="h-full w-full drop-shadow-[0_0_45px_rgba(56,189,248,0.4)] motion-safe:animate-float"
+                priority
+                className="h-auto w-4/5 drop-shadow-[0_0_45px_rgba(56,189,248,0.45)] motion-safe:animate-float"
               />
             </div>
           </div>

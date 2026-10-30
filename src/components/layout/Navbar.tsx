@@ -19,7 +19,7 @@ export function Navbar() {
             className="flex shrink-0 items-center gap-2.5"
             aria-label="Max Digital Studio — Início"
           >
-            <LogoMark id="nav" className="h-8 w-8" />
+            <LogoMark className="h-7 w-auto" />
             <span className="flex flex-col leading-none">
               <span className="font-display text-lg font-bold tracking-tight text-[var(--color-ink)]">
                 MAX
