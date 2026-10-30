@@ -26,7 +26,8 @@ export function FinalCta() {
                 size="lg"
                 target="_blank"
                 rel="noopener noreferrer"
-                event={EVENTS.finalCta}
+                event={EVENTS.whatsappClick}
+                eventParams={{ location: "final" }}
               >
                 {FINAL_CTA.cta} →
               </Button>

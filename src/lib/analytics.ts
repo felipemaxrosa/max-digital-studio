@@ -13,15 +13,13 @@ declare global {
 
 /** Nomes de eventos. Centralizados — não espalhar strings pelo código. */
 export const EVENTS = {
+  // Todo CTA de WhatsApp dispara ESTE evento; o lugar vai no param `location`
+  // (hero, navbar, navbar_mobile, package, final, float, form). Assim no GA só
+  // há 2 conversões a marcar: whatsapp_click (Contact) e proposal_submit (Lead).
   whatsappClick: "whatsapp_click",
-  navCta: "nav_cta",
-  heroCta: "hero_cta",
-  packageCta: "package_cta",
-  finalCta: "final_cta",
   portfolioView: "portfolio_view",
   currencyChange: "currency_change",
   proposalSubmit: "proposal_submit",
-  proposalWhatsapp: "proposal_whatsapp",
 } as const;
 
 export type AnalyticsEvent = (typeof EVENTS)[keyof typeof EVENTS];
@@ -35,11 +33,6 @@ export type EventParams = Record<string, string | number | boolean | undefined>;
 const META_STANDARD: Partial<Record<AnalyticsEvent, string>> = {
   [EVENTS.proposalSubmit]: "Lead",
   [EVENTS.whatsappClick]: "Contact",
-  [EVENTS.navCta]: "Contact",
-  [EVENTS.heroCta]: "Contact",
-  [EVENTS.packageCta]: "Contact",
-  [EVENTS.finalCta]: "Contact",
-  [EVENTS.proposalWhatsapp]: "Contact",
 };
 
 /** Envia um evento ao GA4 e ao Meta Pixel. No-op para o que ainda não carregou. */

@@ -53,7 +53,7 @@ export function Navbar() {
               size="sm"
               target="_blank"
               rel="noopener noreferrer"
-              event={EVENTS.navCta}
+              event={EVENTS.whatsappClick}
               eventParams={{ location: "navbar" }}
             >
               Iniciar Projeto →
@@ -105,7 +105,7 @@ export function Navbar() {
               className="mt-3 w-full justify-center"
               target="_blank"
               rel="noopener noreferrer"
-              event={EVENTS.navCta}
+              event={EVENTS.whatsappClick}
               eventParams={{ location: "navbar_mobile" }}
               onClick={() => setOpen(false)}
             >

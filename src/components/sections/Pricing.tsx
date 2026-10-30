@@ -49,8 +49,8 @@ function PlanCard({ p, currency }: { p: Package; currency: Currency }) {
         target="_blank"
         rel="noopener noreferrer"
         className="w-full justify-center"
-        event={EVENTS.packageCta}
-        eventParams={{ package: p.id, currency }}
+        event={EVENTS.whatsappClick}
+        eventParams={{ location: "package", package: p.id, currency }}
       >
         {p.ctaText} →
       </Button>

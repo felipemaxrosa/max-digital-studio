@@ -41,8 +41,8 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto"
-                event={EVENTS.heroCta}
-                eventParams={{ cta: "whatsapp" }}
+                event={EVENTS.whatsappClick}
+                eventParams={{ location: "hero" }}
               >
                 {HERO.ctaPrimary} →
               </Button>

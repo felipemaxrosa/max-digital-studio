@@ -64,7 +64,7 @@ export function ProposalForm() {
       setErrors(result.errors);
       return;
     }
-    track(EVENTS.proposalWhatsapp, { pacote: result.value.pacote });
+    track(EVENTS.whatsappClick, { location: "form", pacote: result.value.pacote });
     window.open(waLink(buildSummary(result.value)), "_blank", "noopener,noreferrer");
   }
 
