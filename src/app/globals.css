@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/* ────────────────────────────────────────────────────────────
+   Max Digital Studio — Design Tokens
+   globals.css contém SOMENTE: tokens (@theme), fontes e tipografia base.
+   Todo o resto é estilizado com utilitários Tailwind direto nas tags.
+   ──────────────────────────────────────────────────────────── */
+@theme {
+  /* Superfícies */
+  --color-obsidian:     #090A0F; /* canvas / fundo principal */
+  --color-slate:        #12151E; /* superfície / cards */
+  --color-slate-2:      #171C29; /* superfície elevada */
+  --color-border-glass: #1E2333; /* bordas de 1px */
+
+  /* Texto (nome "ink" para não colidir com o utilitário text-white) */
+  --color-ink:          #F8FAFC;
+  --color-muted:        #94A3B8;
+
+  /* Acentos */
+  --color-accent:       #2563EB; /* electric blue — CTA/primário */
+  --color-cyan:         #38BDF8; /* fim do gradiente de assinatura */
+  --color-accent-alt:   #3B82F6;
+
+  /* Fontes (ligadas às CSS vars do next/font no layout.tsx) */
+  --font-display: var(--font-geist);
+  --font-sans:    var(--font-inter);
+  --font-mono:    var(--font-geist-mono);
+
+  /* Raio / sombra / glow */
+  --radius-card:  1rem;          /* rounded-2xl ≈ 16px */
+  --shadow-glow:  0 0 40px -8px rgba(37, 99, 235, 0.45);
+
+  /* Animações → geram utilitários animate-* usados inline nas tags */
+  --animate-glow:    glow 6s ease-in-out infinite;
+  --animate-float:   float 7s ease-in-out infinite;
+  --animate-shimmer: shimmer 8s linear infinite;
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+@keyframes shimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ── Base + tipografia ──────────────────────────────────────── */
+@layer base {
+  * , *::before, *::after { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-obsidian);
+    color: var(--color-ink);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}

@@ -1,0 +1,9 @@
+export { Hero } from "./Hero";
+export { Conflict } from "./Conflict";
+export { Method } from "./Method";
+export { PortfolioShowcase } from "./PortfolioShowcase";
+export { Process } from "./Process";
+export { Pricing } from "./Pricing";
+export { Founder } from "./Founder";
+export { Faq } from "./Faq";
+export { FinalCta } from "./FinalCta";
