@@ -1,6 +1,7 @@
 import { SectionReveal, Button, RadialGlow } from "@/components/ui";
 import { FINAL_CTA } from "@/lib/content";
 import { waLink, WA_MESSAGES } from "@/lib/site";
+import { EVENTS } from "@/lib/analytics";
 
 export function FinalCta() {
   return (
@@ -25,6 +26,7 @@ export function FinalCta() {
                 size="lg"
                 target="_blank"
                 rel="noopener noreferrer"
+                event={EVENTS.finalCta}
               >
                 {FINAL_CTA.cta} →
               </Button>

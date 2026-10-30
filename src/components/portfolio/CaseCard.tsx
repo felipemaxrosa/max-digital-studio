@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { GlassMockup, TechBadge } from "@/components/ui";
 import { ArrowRightIcon } from "@/components/icons";
 import { METRICS, type Project } from "@/lib/portfolio";
+import { track, EVENTS } from "@/lib/analytics";
 
 type Props = {
   project: Project;
@@ -57,6 +60,7 @@ export function CaseCard({ project, detailed = false, priority = false }: Props)
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => track(EVENTS.portfolioView, { project: project.slug })}
           className="mt-auto inline-flex w-fit items-center gap-1.5 pt-2 text-sm font-medium text-[var(--color-cyan)] underline-offset-4 hover:underline"
         >
           Ver Demonstração Ao Vivo <ArrowRightIcon className="h-4 w-4" />

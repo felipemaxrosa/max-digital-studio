@@ -12,6 +12,7 @@ import {
   type FieldErrors,
 } from "@/lib/proposal";
 import { waLink } from "@/lib/site";
+import { track, EVENTS } from "@/lib/analytics";
 
 const fieldBase =
   "w-full rounded-xl border bg-[var(--color-slate)] px-4 py-3 text-sm text-[var(--color-ink)] placeholder:text-[var(--color-muted)]/50 transition-colors focus:outline-none";
@@ -53,6 +54,7 @@ export function ProposalForm() {
     } catch {
       // Falha de rede não perde o lead — o estado de sucesso oferece o WhatsApp.
     }
+    track(EVENTS.proposalSubmit, { pacote: result.value.pacote });
     setStatus("sent");
   }
 
@@ -62,6 +64,7 @@ export function ProposalForm() {
       setErrors(result.errors);
       return;
     }
+    track(EVENTS.proposalWhatsapp, { pacote: result.value.pacote });
     window.open(waLink(buildSummary(result.value)), "_blank", "noopener,noreferrer");
   }
 

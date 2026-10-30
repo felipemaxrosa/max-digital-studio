@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui";
 import { NAV } from "@/lib/content";
 import { waLink, WA_MESSAGES } from "@/lib/site";
+import { EVENTS } from "@/lib/analytics";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -52,6 +53,8 @@ export function Navbar() {
               size="sm"
               target="_blank"
               rel="noopener noreferrer"
+              event={EVENTS.navCta}
+              eventParams={{ location: "navbar" }}
             >
               Iniciar Projeto →
             </Button>
@@ -102,6 +105,8 @@ export function Navbar() {
               className="mt-3 w-full justify-center"
               target="_blank"
               rel="noopener noreferrer"
+              event={EVENTS.navCta}
+              eventParams={{ location: "navbar_mobile" }}
               onClick={() => setOpen(false)}
             >
               Iniciar Projeto →

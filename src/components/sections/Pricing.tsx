@@ -5,6 +5,7 @@ import { SectionHeading, SectionReveal, Button, RadialGlow } from "@/components/
 import { SparkIcon } from "@/components/icons";
 import { PACKAGES, formatPrice, type Package, type Currency } from "@/lib/pricing";
 import { waLink } from "@/lib/site";
+import { track, EVENTS } from "@/lib/analytics";
 
 const STORAGE_KEY = "mds-currency";
 
@@ -48,6 +49,8 @@ function PlanCard({ p, currency }: { p: Package; currency: Currency }) {
         target="_blank"
         rel="noopener noreferrer"
         className="w-full justify-center"
+        event={EVENTS.packageCta}
+        eventParams={{ package: p.id, currency }}
       >
         {p.ctaText} →
       </Button>
@@ -137,6 +140,7 @@ export function Pricing() {
 
   function change(c: Currency) {
     setCurrency(c);
+    track(EVENTS.currencyChange, { currency: c });
     try {
       localStorage.setItem(STORAGE_KEY, c);
     } catch {

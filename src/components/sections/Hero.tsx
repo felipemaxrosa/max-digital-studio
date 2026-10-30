@@ -1,6 +1,7 @@
 import { Button, TechBadge, RadialGlow, PhoneMockup } from "@/components/ui";
 import { HERO } from "@/lib/content";
 import { waLink, WA_MESSAGES } from "@/lib/site";
+import { EVENTS } from "@/lib/analytics";
 
 export function Hero() {
   return (
@@ -40,6 +41,8 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto"
+                event={EVENTS.heroCta}
+                eventParams={{ cta: "whatsapp" }}
               >
                 {HERO.ctaPrimary} →
               </Button>
