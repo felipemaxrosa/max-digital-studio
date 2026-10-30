@@ -23,11 +23,11 @@ export function Navbar() {
             <Image
               src="/brand/logo-lockup.png"
               alt="Max Digital Studio"
-              width={1045}
-              height={320}
+              width={1044}
+              height={263}
               priority
-              sizes="160px"
-              className="h-9 w-auto md:h-10"
+              sizes="180px"
+              className="h-7 w-auto md:h-8"
             />
           </Link>
 

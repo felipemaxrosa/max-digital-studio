@@ -36,10 +36,10 @@ export function Footer() {
               <Image
                 src="/brand/logo-lockup.png"
                 alt="Max Digital Studio"
-                width={1045}
-                height={320}
-                sizes="200px"
-                className="h-11 w-auto"
+                width={1044}
+                height={263}
+                sizes="220px"
+                className="h-9 w-auto"
               />
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-[var(--color-muted)]">
