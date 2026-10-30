@@ -1,4 +1,4 @@
-import { Button, TechBadge, RadialGlow, LogoMark } from "@/components/ui";
+import { Button, TechBadge, RadialGlow, PhoneMockup } from "@/components/ui";
 import { HERO } from "@/lib/content";
 import { waLink, WA_MESSAGES } from "@/lib/site";
 
@@ -63,17 +63,36 @@ export function Hero() {
             </ul>
           </div>
 
-          {/* Logo animado em painel de vidro */}
+          {/* Showcase 3D — projetos em telemóveis inclinados */}
           <div className="relative flex items-center justify-center">
-            <div className="relative flex aspect-square w-full max-w-sm items-center justify-center rounded-[var(--radius-card)] border border-[var(--color-border-glass)] bg-gradient-to-b from-white/[0.05] to-transparent p-12 backdrop-blur-sm">
-              <RadialGlow
-                className="inset-0 m-auto h-[65%] w-[65%] motion-safe:animate-glow"
-                color="rgba(56,189,248,0.4)"
-              />
-              <LogoMark
-                priority
-                className="h-auto w-4/5 drop-shadow-[0_0_45px_rgba(56,189,248,0.45)] motion-safe:animate-float"
-              />
+            <RadialGlow
+              className="right-0 top-1/2 h-[400px] w-[400px] -translate-y-1/2 motion-safe:animate-glow"
+              color="rgba(37,99,235,0.42)"
+            />
+            <RadialGlow
+              className="bottom-4 left-4 h-52 w-52"
+              color="rgba(56,189,248,0.22)"
+            />
+            <div className="relative mx-auto h-[440px] w-full max-w-md [perspective:1400px]">
+              {/* telemóvel de trás */}
+              <div className="absolute left-0 top-[10%] w-[46%] [transform:rotateY(-22deg)_rotateX(8deg)]">
+                <div className="motion-safe:animate-float" style={{ animationDelay: "0.9s" }}>
+                  <PhoneMockup
+                    src="/portfolio/sol-music-mobile.png"
+                    alt="Projeto Sol Music em dispositivo móvel"
+                  />
+                </div>
+              </div>
+              {/* telemóvel da frente */}
+              <div className="absolute right-0 top-[22%] w-[52%] [transform:rotateY(-22deg)_rotateX(8deg)]">
+                <div className="motion-safe:animate-float">
+                  <PhoneMockup
+                    src="/portfolio/a-casa-barbearia-mobile.png"
+                    alt="Projeto A Casa Barbearia em dispositivo móvel"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

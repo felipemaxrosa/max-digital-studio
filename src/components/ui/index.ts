@@ -2,6 +2,7 @@ export { Button } from "./Button";
 export { Card } from "./Card";
 export { LogoMark } from "./LogoMark";
 export { GlassMockup } from "./GlassMockup";
+export { PhoneMockup } from "./PhoneMockup";
 export { TechBadge } from "./TechBadge";
 export { Badge } from "./Badge";
 export { RadialGlow } from "./RadialGlow";
