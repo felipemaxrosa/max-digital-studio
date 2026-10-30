@@ -1,22 +1,24 @@
 /**
  * Pacotes de serviço (dobra "Pacotes & Preços").
  *
- * ⚠️ EDITE AQUI os valores "a partir de" — são placeholders até você definir.
- * Troque só os números abaixo; a formatação em R$ é automática.
+ * ⚠️ EDITE AQUI os valores "a partir de" — um por moeda.
+ * (BRL = Brasil / EUR = Portugal.) A formatação é automática.
  */
+import { WA_MESSAGES } from "./site";
+
 const PRICE_FROM = {
-  lp: 1497, // Landing Page de Alta Conversão
-  identidade: 2497, // Identidade + Landing Page (Carro-Chefe)
-  manutencao: 197, // Retenção / Manutenção — por mês
+  lp:         { BRL: 1497, EUR: 500 }, // Landing Page de Alta Conversão
+  identidade: { BRL: 2497, EUR: 800 }, // Identidade + Landing Page (Carro-Chefe)
+  manutencao: { BRL: 197,  EUR: 50 },  // Retenção / Manutenção — por mês
 } as const;
 
-import { WA_MESSAGES } from "./site";
+export type Currency = "BRL" | "EUR";
 
 export type Package = {
   id: string;
   name: string;
   audience: string;
-  priceFrom: number;
+  priceFrom: { BRL: number; EUR: number };
   /** sufixo de período, ex.: "/mês" (vazio = pagamento único) */
   period?: string;
   deadline?: string;
@@ -79,11 +81,12 @@ export const PACKAGES: Package[] = [
   },
 ];
 
-/** Formata número como "a partir de R$ 1.497". */
-export function formatBRL(value: number): string {
-  return value.toLocaleString("pt-BR", {
+/** Formata o valor na moeda ("R$ 1.497" / "500 €"). */
+export function formatPrice(value: number, currency: Currency): string {
+  const locale = currency === "EUR" ? "pt-PT" : "pt-BR";
+  return value.toLocaleString(locale, {
     style: "currency",
-    currency: "BRL",
+    currency,
     maximumFractionDigits: 0,
   });
 }

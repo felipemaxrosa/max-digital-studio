@@ -1,9 +1,14 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { SectionHeading, SectionReveal, Button, RadialGlow } from "@/components/ui";
 import { SparkIcon } from "@/components/icons";
-import { PACKAGES, formatBRL, type Package } from "@/lib/pricing";
+import { PACKAGES, formatPrice, type Package, type Currency } from "@/lib/pricing";
 import { waLink } from "@/lib/site";
 
-function PlanCard({ p }: { p: Package }) {
+const STORAGE_KEY = "mds-currency";
+
+function PlanCard({ p, currency }: { p: Package; currency: Currency }) {
   const inner = (
     <div className="flex h-full flex-col gap-6 rounded-[var(--radius-card)] bg-[var(--color-slate)] p-7">
       <div className="flex flex-col gap-3">
@@ -15,7 +20,7 @@ function PlanCard({ p }: { p: Package }) {
         <span className="block font-mono text-xs uppercase tracking-wider text-[var(--color-muted)]">
           a partir de
         </span>
-        <span className="text-3xl font-bold">{formatBRL(p.priceFrom)}</span>
+        <span className="text-3xl font-bold">{formatPrice(p.priceFrom[currency], currency)}</span>
         {p.period && <span className="text-sm text-[var(--color-muted)]">{p.period}</span>}
       </div>
 
@@ -69,9 +74,81 @@ function PlanCard({ p }: { p: Package }) {
   );
 }
 
-export function Pricing() {
+function CurrencyToggle({
+  currency,
+  onChange,
+}: {
+  currency: Currency;
+  onChange: (c: Currency) => void;
+}) {
+  const options: { value: Currency; label: string }[] = [
+    { value: "BRL", label: "R$ Real" },
+    { value: "EUR", label: "€ Euro" },
+  ];
   return (
-    <section id="pacotes" className="relative scroll-mt-24 overflow-hidden border-t border-[var(--color-border-glass)]/60">
+    <div
+      role="group"
+      aria-label="Escolher moeda"
+      className="inline-flex rounded-full border border-[var(--color-border-glass)] bg-[var(--color-slate)] p-1"
+    >
+      {options.map((o) => {
+        const active = currency === o.value;
+        return (
+          <button
+            key={o.value}
+            type="button"
+            aria-pressed={active}
+            onClick={() => onChange(o.value)}
+            className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
+              active
+                ? "bg-[linear-gradient(90deg,#2563EB,#38BDF8)] text-white"
+                : "text-[var(--color-muted)] hover:text-[var(--color-ink)]"
+            }`}
+          >
+            {o.label}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+export function Pricing() {
+  // SSR e 1º render usam "BRL" (evita mismatch); o efeito ajusta na montagem.
+  const [currency, setCurrency] = useState<Currency>("BRL");
+
+  useEffect(() => {
+    let next: Currency = "BRL";
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved === "BRL" || saved === "EUR") {
+        next = saved;
+      } else {
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+        if (tz.startsWith("Europe/")) next = "EUR";
+      }
+    } catch {
+      /* localStorage/Intl indisponível — mantém o default */
+    }
+    // Ajuste único após a montagem (localStorage/região só existem no client).
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (next !== "BRL") setCurrency(next);
+  }, []);
+
+  function change(c: Currency) {
+    setCurrency(c);
+    try {
+      localStorage.setItem(STORAGE_KEY, c);
+    } catch {
+      /* ignora */
+    }
+  }
+
+  return (
+    <section
+      id="pacotes"
+      className="relative scroll-mt-24 overflow-hidden border-t border-[var(--color-border-glass)]/60"
+    >
       <RadialGlow
         className="top-8 left-1/2 h-[420px] w-[720px] -translate-x-1/2"
         color="rgba(37,99,235,0.14)"
@@ -85,10 +162,14 @@ export function Pricing() {
           />
         </SectionReveal>
 
-        <div className="mt-14 grid items-stretch gap-5 lg:grid-cols-3">
+        <div className="mt-8 flex justify-center">
+          <CurrencyToggle currency={currency} onChange={change} />
+        </div>
+
+        <div className="mt-10 grid items-stretch gap-5 lg:grid-cols-3">
           {PACKAGES.map((p, i) => (
             <SectionReveal key={p.id} delay={i * 90} className="h-full">
-              <PlanCard p={p} />
+              <PlanCard p={p} currency={currency} />
             </SectionReveal>
           ))}
         </div>

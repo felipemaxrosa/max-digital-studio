@@ -39,7 +39,7 @@ export default function OpengraphImage() {
           }}
         />
         {/* Símbolo "M" */}
-        <img src={markSrc} width={118} height={92} />
+        <img src={markSrc} width={118} height={92} alt="" />
         <div
           style={{
             color: "#38BDF8",
