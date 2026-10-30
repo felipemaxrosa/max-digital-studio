@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { validateProposal, buildSummary, isEmail } from "@/lib/proposal";
+import { buildEmailHtml } from "@/lib/email";
 
 export const runtime = "nodejs";
 
@@ -43,6 +44,7 @@ export async function POST(req: Request) {
       replyTo: isEmail(value.contato) ? value.contato : undefined,
       subject: `Nova proposta — ${value.nome}`,
       text: buildSummary(value),
+      html: buildEmailHtml(value),
     });
     return NextResponse.json({ ok: true, emailed: true });
   } catch (err) {
