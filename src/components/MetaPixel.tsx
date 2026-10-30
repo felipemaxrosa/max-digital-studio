@@ -4,8 +4,8 @@ import Script from 'next/script';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 
-// ID do Meta Pixel — defina NEXT_PUBLIC_META_PIXEL_ID para ativar.
-const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || '';
+// ID do Meta Pixel — pode ser sobrescrito por NEXT_PUBLIC_META_PIXEL_ID.
+const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || '1782315696383654';
 
 // Só carrega em produção e quando há um ID configurado.
 const enabled = process.env.NODE_ENV === 'production' && Boolean(PIXEL_ID);
