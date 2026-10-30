@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { LogoMark, Button } from "@/components/ui";
+import Image from "next/image";
+import { Button } from "@/components/ui";
 import { NAV } from "@/lib/content";
 import { waLink, WA_MESSAGES } from "@/lib/site";
 
@@ -16,18 +17,18 @@ export function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex shrink-0 items-center gap-2.5"
+            className="flex shrink-0 items-center"
             aria-label="Max Digital Studio — Início"
           >
-            <LogoMark className="h-7 w-auto" />
-            <span className="flex flex-col leading-none">
-              <span className="font-display text-lg font-bold tracking-tight text-[var(--color-ink)]">
-                MAX
-              </span>
-              <span className="font-mono text-[0.55rem] uppercase tracking-[0.25em] text-[var(--color-muted)]">
-                Digital Studio
-              </span>
-            </span>
+            <Image
+              src="/brand/logo-lockup.png"
+              alt="Max Digital Studio"
+              width={1045}
+              height={320}
+              priority
+              sizes="160px"
+              className="h-9 w-auto md:h-10"
+            />
           </Link>
 
           {/* Nav desktop */}

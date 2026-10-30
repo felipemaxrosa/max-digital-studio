@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LogoMark } from "@/components/ui";
+import Image from "next/image";
 import { MailIcon, InstagramIcon, WhatsAppIcon } from "@/components/icons";
 import { SITE, waLink, WA_MESSAGES } from "@/lib/site";
 import { FOOTER } from "@/lib/content";
@@ -32,17 +32,18 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           {/* Marca */}
           <div className="flex flex-col gap-4">
-            <Link href="/" className="flex items-center gap-2.5" aria-label="Max Digital Studio — Início">
-              <LogoMark className="h-7 w-auto" />
-              <span className="flex flex-col leading-none">
-                <span className="font-display text-lg font-bold tracking-tight text-[var(--color-ink)]">MAX</span>
-                <span className="font-mono text-[0.55rem] uppercase tracking-[0.25em] text-[var(--color-muted)]">
-                  Digital Studio
-                </span>
-              </span>
+            <Link href="/" className="inline-flex items-center" aria-label="Max Digital Studio — Início">
+              <Image
+                src="/brand/logo-lockup.png"
+                alt="Max Digital Studio"
+                width={1045}
+                height={320}
+                sizes="200px"
+                className="h-11 w-auto"
+              />
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-[var(--color-muted)]">
-              {FOOTER.tagline}. Atendimento remoto para todo o {FOOTER.location}.
+              Atendimento remoto para todo o {FOOTER.location}.
             </p>
           </div>
 
