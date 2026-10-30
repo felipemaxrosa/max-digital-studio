@@ -1,4 +1,5 @@
 import { SectionHeading, SectionReveal, Button, RadialGlow } from "@/components/ui";
+import { SparkIcon } from "@/components/icons";
 import { PACKAGES, formatBRL, type Package } from "@/lib/pricing";
 import { waLink } from "@/lib/site";
 
@@ -6,14 +7,7 @@ function PlanCard({ p }: { p: Package }) {
   const inner = (
     <div className="flex h-full flex-col gap-6 rounded-[var(--radius-card)] bg-[var(--color-slate)] p-7">
       <div className="flex flex-col gap-3">
-        <div className="flex items-center justify-between gap-2">
-          <h3 className="text-xl font-bold">{p.name}</h3>
-          {p.badge && (
-            <span className="rounded-full bg-[linear-gradient(90deg,#2563EB,#38BDF8)] px-3 py-1 text-xs font-semibold text-white">
-              {p.badge}
-            </span>
-          )}
-        </div>
+        <h3 className="text-xl font-bold">{p.name}</h3>
         <p className="text-sm leading-relaxed text-[var(--color-muted)]">{p.audience}</p>
       </div>
 
@@ -58,6 +52,12 @@ function PlanCard({ p }: { p: Package }) {
   if (p.highlight) {
     return (
       <div className="relative rounded-[calc(var(--radius-card)+1px)] bg-[linear-gradient(140deg,#2563EB,#38BDF8)] p-px shadow-[var(--shadow-glow)] lg:-translate-y-2 lg:scale-[1.02]">
+        {p.badge && (
+          <span className="absolute -top-3.5 left-1/2 z-10 inline-flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full bg-[linear-gradient(90deg,#2563EB,#38BDF8)] px-4 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-white shadow-[0_8px_26px_-6px_rgba(37,99,235,0.85)] ring-1 ring-white/25">
+            <SparkIcon className="h-3.5 w-3.5" />
+            {p.badge}
+          </span>
+        )}
         {inner}
       </div>
     );

@@ -27,6 +27,14 @@ export function InstagramIcon({ className }: IconProps) {
   );
 }
 
+export function SparkIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className={className} xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 1.8l1.9 6.3a3 3 0 0 0 2 2L22 12l-6.1 1.9a3 3 0 0 0-2 2L12 22.2l-1.9-6.3a3 3 0 0 0-2-2L2 12l6.1-1.9a3 3 0 0 0 2-2L12 1.8z" />
+    </svg>
+  );
+}
+
 export function ArrowRightIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className={className} xmlns="http://www.w3.org/2000/svg">
