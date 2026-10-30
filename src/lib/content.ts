@@ -8,6 +8,7 @@ export const NAV = [
   { label: "Diferenciais", href: "/#metodo" },
   { label: "Como Funciona", href: "/#processo" },
   { label: "FAQ", href: "/#faq" },
+  { label: "Contato", href: "/contato" },
 ] as const;
 
 export const HERO = {
