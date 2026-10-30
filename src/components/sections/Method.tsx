@@ -17,7 +17,7 @@ export function Method() {
 
         <div className="mt-14 flex flex-col gap-5">
           {/* Bloco principal — Engenharia Frontend Sob Medida */}
-          <SectionReveal>
+          <SectionReveal variant="scale">
             <div className="relative overflow-hidden rounded-[var(--radius-card)] border border-[color:color-mix(in_srgb,var(--color-accent)_40%,var(--color-border-glass))] bg-gradient-to-br from-[color:color-mix(in_srgb,var(--color-accent)_12%,var(--color-slate))] to-[var(--color-slate)] p-8 md:p-10">
               <RadialGlow className="-right-10 -top-10 h-56 w-56" color="rgba(56,189,248,0.22)" />
               <span className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-[var(--color-cyan)]">
