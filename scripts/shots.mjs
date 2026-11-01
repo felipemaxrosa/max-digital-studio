@@ -11,7 +11,7 @@ const OUT = "public/portfolio";
 mkdirSync(OUT, { recursive: true });
 
 const PROJECTS = [
-  { slug: "amanda-beauty", url: "https://lp-amanda-domingues-beauty-studio.vercel.app/" },
+  { slug: "amanda-beauty", url: "https://amandadominguesbeauty.pt/" },
   { slug: "a-casa-barbearia", url: "https://a-casa-barbearia.vercel.app/" },
   { slug: "la-casa-pastel", url: "https://la-casa-de-pastel-caragua.vercel.app/" },
   { slug: "escolinha-encantada", url: "https://escolinha-encantada.vercel.app/" },
@@ -24,8 +24,12 @@ const VIEWPORTS = {
   mobile: { width: 390, height: 844, dsf: 2 },
 };
 
+// Filtro opcional por slug: `pnpm shots amanda-beauty` regera só esse(s).
+const only = process.argv.slice(2);
+const targets = only.length ? PROJECTS.filter((p) => only.includes(p.slug)) : PROJECTS;
+
 const browser = await chromium.launch();
-for (const p of PROJECTS) {
+for (const p of targets) {
   for (const [name, vp] of Object.entries(VIEWPORTS)) {
     const page = await browser.newPage({
       viewport: { width: vp.width, height: vp.height },
