@@ -20,6 +20,8 @@ export type Project = {
   url: string;
   challenge: string;
   solution: string;
+  /** destaque na home (vitrine curada); a /portfolio mostra todos */
+  featured?: boolean;
 };
 
 export const MEASURED_AT = 'novembro de 2026';
@@ -28,6 +30,12 @@ export const MEASURED_AT = 'novembro de 2026';
 export const METRICS: Record<string, Metrics> = {
   'amanda-beauty': {
     performance: 98,
+    accessibility: 96,
+    bestPractices: 100,
+    seo: 100,
+  },
+  'maurilio-moreira': {
+    performance: 87,
     accessibility: 96,
     bestPractices: 100,
     seo: 100,
@@ -74,6 +82,18 @@ export const PROJECTS: Project[] = [
       'Posicionar procedimentos de estética avançada com elegância para atrair clientes de alto poder aquisitivo.',
     solution:
       'Identidade visual minimalista e suave, destacando serviços, depoimentos e botão de agendamento no WhatsApp em evidência constante.',
+    featured: true,
+  },
+  {
+    slug: 'maurilio-moreira',
+    name: 'Vereador Maurílio Moreira',
+    niche: 'Política & Mandato',
+    url: 'https://lp-maurilio-moreira.vercel.app/',
+    challenge:
+      'Transmitir a seriedade de um mandato e comprovar entregas reais, aproximando o vereador do eleitor sem cair no "site de político" genérico.',
+    solution:
+      'Landing page institucional com narrativa de valores, um "placar do mandato" que comprova leis e obras entregues e um canal direto com o gabinete via WhatsApp — rápida, responsiva e confiável.',
+    featured: true,
   },
   {
     slug: 'a-casa-barbearia',
@@ -94,6 +114,7 @@ export const PROJECTS: Project[] = [
       'Apresentar o cardápio completo de forma rápida no 4G móvel e direcionar pedidos sem taxas de marketplace.',
     solution:
       'Layout visual com fotos dos pratos, categorização ágil e encaminhamento do pedido formatado direto para o WhatsApp do restaurante.',
+    featured: true,
   },
   {
     slug: 'escolinha-encantada',
@@ -126,3 +147,6 @@ export const PROJECTS: Project[] = [
       'Interface moderna, responsividade total e fluidez em telas de qualquer tamanho.',
   },
 ];
+
+/** Destaques da home (vitrine curada). A página /portfolio mostra todos. */
+export const FEATURED_PROJECTS = PROJECTS.filter((p) => p.featured);

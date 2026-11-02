@@ -1,6 +1,6 @@
 import { SectionHeading, SectionReveal, Button } from "@/components/ui";
 import { CaseCard } from "@/components/portfolio/CaseCard";
-import { PROJECTS, MEASURED_AT } from "@/lib/portfolio";
+import { FEATURED_PROJECTS, MEASURED_AT } from "@/lib/portfolio";
 
 export function PortfolioShowcase() {
   return (
@@ -15,7 +15,7 @@ export function PortfolioShowcase() {
         </SectionReveal>
 
         <div className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS.map((p, i) => (
+          {FEATURED_PROJECTS.map((p, i) => (
             <SectionReveal key={p.slug} delay={(i % 3) * 90}>
               <CaseCard project={p} priority={i < 3} />
             </SectionReveal>

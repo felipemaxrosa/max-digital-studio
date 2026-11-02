@@ -12,6 +12,7 @@ mkdirSync(OUT, { recursive: true });
 
 const PROJECTS = [
   { slug: "amanda-beauty", url: "https://amandadominguesbeauty.pt/" },
+  { slug: "maurilio-moreira", url: "https://lp-maurilio-moreira.vercel.app/" },
   { slug: "a-casa-barbearia", url: "https://a-casa-barbearia.vercel.app/" },
   { slug: "la-casa-pastel", url: "https://la-casa-de-pastel-caragua.vercel.app/" },
   { slug: "escolinha-encantada", url: "https://escolinha-encantada.vercel.app/" },

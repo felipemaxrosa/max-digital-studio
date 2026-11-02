@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SectionHeading, SectionReveal, Button, RadialGlow } from "@/components/ui";
 import { CaseCard } from "@/components/portfolio/CaseCard";
-import { PROJECTS } from "@/lib/portfolio";
+import { PROJECTS, MEASURED_AT } from "@/lib/portfolio";
 import { waLink, WA_MESSAGES } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ export default function PortfolioPage() {
             align="left"
             eyebrow="PORTFÓLIO EM AÇÃO"
             title="Cases construídos para destacar marcas e fechar negócios."
-            subtitle="Projetos autorais e demonstrações por nicho, cada um com o desafio enfrentado e a solução entregue. Os scores são Lighthouse (lab · mobile) medidos em outubro de 2026."
+            subtitle={`Projetos autorais e demonstrações por nicho, cada um com o desafio enfrentado e a solução entregue. Os scores são Lighthouse (lab · mobile) medidos em ${MEASURED_AT}.`}
           />
         </div>
       </section>
