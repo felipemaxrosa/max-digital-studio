@@ -19,11 +19,28 @@ function PlanCard({ p, currency }: { p: Package; currency: Currency }) {
 
       <div>
         <span className="block font-mono text-xs uppercase tracking-wider text-[var(--color-muted)]">
-          a partir de
+          {p.priceLabel ?? "a partir de"}
         </span>
         <span className="text-3xl font-bold">{formatPrice(p.priceFrom[currency], currency)}</span>
         {p.period && <span className="text-sm text-[var(--color-muted)]">{p.period}</span>}
       </div>
+
+      {p.anchorPrice && (
+        <div className="rounded-xl border border-[color:color-mix(in_srgb,var(--color-cyan)_40%,var(--color-border-glass))] bg-[color:color-mix(in_srgb,var(--color-accent)_12%,transparent)] px-4 py-3">
+          {p.anchorEyebrow && (
+            <span className="block font-mono text-[0.7rem] uppercase tracking-wider text-[var(--color-cyan)]">
+              {p.anchorEyebrow}
+            </span>
+          )}
+          <p className="mt-1.5 text-xs leading-relaxed text-[var(--color-muted)]">
+            {p.anchorBefore}{" "}
+            <span className="font-bold text-[var(--color-ink)]">
+              {formatPrice(p.anchorPrice[currency], currency)}
+            </span>
+            {p.anchorAfter}
+          </p>
+        </div>
+      )}
 
       {p.deadline && (
         <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--color-border-glass)] px-3 py-1 font-mono text-[0.7rem] uppercase tracking-wider text-[var(--color-cyan)]">
@@ -179,7 +196,7 @@ export function Pricing() {
         </div>
 
         <p className="mt-8 text-center font-mono text-xs text-[var(--color-muted)]">
-          * Valores &quot;a partir de&quot;. Proposta final sem compromisso após o diagnóstico.
+          * Valores de referência. Proposta final sem compromisso após o diagnóstico.
         </p>
       </div>
     </section>

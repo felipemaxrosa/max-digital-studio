@@ -9,7 +9,7 @@ import { WA_MESSAGES } from './site';
 const PRICE_FROM = {
   lp: { BRL: 1500, EUR: 500 }, // Landing Page de Alta Conversão
   identidade: { BRL: 2500, EUR: 800 }, // Identidade + Landing Page (Carro-Chefe)
-  manutencao: { BRL: 200, EUR: 50 }, // Retenção / Manutenção — por mês
+  manutencao: { BRL: 75, EUR: 25 }, // Plano de cuidado contínuo — por mês
 } as const;
 
 export type Currency = 'BRL' | 'EUR';
@@ -21,6 +21,13 @@ export type Package = {
   priceFrom: { BRL: number; EUR: number };
   /** sufixo de período, ex.: "/mês" (vazio = pagamento único) */
   period?: string;
+  /** rótulo acima do preço (default "a partir de") */
+  priceLabel?: string;
+  /** ancoragem de valor: preço do ajuste avulso (fora do plano), por moeda */
+  anchorPrice?: { BRL: number; EUR: number };
+  anchorEyebrow?: string;
+  anchorBefore?: string;
+  anchorAfter?: string;
   deadline?: string;
   deliverables: string[];
   highlight?: boolean;
@@ -68,17 +75,23 @@ export const PACKAGES: Package[] = [
   },
   {
     id: 'manutencao',
-    name: 'Retenção / Manutenção',
-    audience: 'Para manter seu site sempre no ar, rápido e atualizado.',
+    name: 'Cuidamos de Tudo',
+    audience:
+      'Para quem quer que a gente continue cuidando de tudo: site sempre no ar, rápido e atualizado — sem você precisar se preocupar.',
     priceFrom: PRICE_FROM.manutencao,
     period: '/mês',
+    priceLabel: 'plano mensal',
+    anchorPrice: { BRL: 300, EUR: 100 }, // ⚠️ EDITE AQUI o preço do ajuste avulso (fora do plano)
+    anchorEyebrow: 'Compare',
+    anchorBefore: 'Avulso, fora do plano, cada ajuste sai por',
+    anchorAfter: '. No plano, a gente cuida da sua página a cada 15 dias — incluso.',
     deliverables: [
-      'Hospedagem gerenciada',
-      'Pequenas alterações mensais de texto / ofertas',
-      'Monitoramento técnico e atualizações',
-      'Suporte prioritário',
+      'Ajustes quinzenais (2x/mês): textos, ofertas e imagens',
+      'Hospedagem gerenciada e domínio sempre no ar',
+      'Monitoramento, backups e atualizações de segurança',
+      'Suporte prioritário com resposta rápida',
     ],
-    ctaText: 'Falar sobre manutenção',
+    ctaText: 'Quero esse cuidado',
     waMessage: WA_MESSAGES.pacoteManutencao,
   },
 ];
