@@ -7,7 +7,7 @@ import { waLink, WA_MESSAGES } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Sobre",
   description:
-    "Estúdio digital de identidade visual e landing pages de alta conversão, com padrão de engenharia de produto. Atendimento remoto para todo o Brasil.",
+    "Estúdio digital de identidade visual e landing pages de alta conversão, com padrão de engenharia de produto. Atendimento remoto para o Brasil e Portugal.",
   alternates: { canonical: "/sobre" },
 };
 

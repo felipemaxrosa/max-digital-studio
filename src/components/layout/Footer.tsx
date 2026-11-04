@@ -43,7 +43,7 @@ export function Footer() {
               />
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-[var(--color-muted)]">
-              Atendimento remoto para todo o {FOOTER.location}.
+              Atendimento remoto para o {FOOTER.location}.
             </p>
           </div>
 

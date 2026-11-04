@@ -137,7 +137,7 @@ export const ABOUT = {
   eyebrow: "SOBRE O ESTÚDIO",
   title: "Engenharia e design a serviço do seu resultado.",
   intro:
-    "A Max Digital Studio é um estúdio digital que transforma negócios em marcas fortes e páginas que realmente vendem. Trabalho remoto para todo o Brasil, com padrão de engenharia de produto — não de template.",
+    "A Max Digital Studio é um estúdio digital que transforma negócios em marcas fortes e páginas que realmente vendem. Trabalho remoto para o Brasil e Portugal, com padrão de engenharia de produto — não de template.",
   positioning: {
     eyebrow: "PARA QUEM É",
     title: "Feito para quem leva o próprio negócio a sério.",
@@ -160,7 +160,7 @@ export const ABOUT = {
 
 export const FOOTER = {
   tagline: "Identidade Visual & Landing Pages",
-  location: "Brasil",
+  location: "Brasil e Portugal",
   signature:
     "© 2026 Max Digital Studio. Todos os direitos reservados. Código proprietário.",
 } as const;

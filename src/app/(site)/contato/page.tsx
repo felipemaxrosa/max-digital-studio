@@ -82,7 +82,7 @@ export default function ContatoPage() {
             </a>
 
             <p className="mt-2 rounded-[var(--radius-card)] border border-[var(--color-border-glass)] bg-[var(--color-slate)]/30 p-5 text-sm leading-relaxed text-[var(--color-muted)]">
-              Atendimento 100% remoto para todo o {SITE.location}. Sem ponto físico — toda a
+              Atendimento 100% remoto para o {SITE.location}. Sem ponto físico — toda a
               comunicação acontece pelo WhatsApp e e-mail, com agilidade.
             </p>
           </aside>

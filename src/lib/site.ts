@@ -18,11 +18,11 @@ export const SITE = {
   shortName: "Max Digital Studio",
   tagline: "Identidade Visual & Landing Pages",
   description:
-    "Estúdio digital de identidade visual e landing pages de alta conversão. Design exclusivo, código ultrarrápido e foco em resultados — atendimento remoto para todo o Brasil.",
+    "Estúdio digital de identidade visual e landing pages de alta conversão. Design exclusivo, código ultrarrápido e foco em resultados — atendimento remoto para o Brasil e Portugal.",
   url: SITE_URL,
   whatsapp: WHATSAPP,
   email: "contato@maxdigitalstudio.com.br",
-  location: "Brasil",
+  location: "Brasil e Portugal",
   founder: "Felipe",
   founderYears: 6,
   social: {
