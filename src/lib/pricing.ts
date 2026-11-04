@@ -87,11 +87,12 @@ export const PACKAGES: Package[] = [
     anchorPrice: { BRL: 150, EUR: 40 }, // ⚠️ EDITE AQUI o preço da intervenção avulsa (EUR estimado)
     anchorEyebrow: 'Compare',
     anchorBefore: 'Intervenções avulsas saem a partir de',
-    anchorAfter: ' por chamado. No plano contínuo, a infraestrutura e o suporte técnico estão inclusos todos os meses.',
+    anchorAfter:
+      ' por chamado. No plano contínuo, a infraestrutura e o suporte técnico estão inclusos todos os meses.',
     deliverables: [
       'Hospedagem gerenciada em infraestrutura moderna (zero preocupação com servidores e DNS)',
       'Certificado SSL e domínio sempre monitorados',
-      'Até 1 intervenção mensal de conteúdo (atualização de textos, troca de fotos de campanha ou ajustes de preços)',
+      'Até 2 intervenções mensais de conteúdo (atualização de textos, troca de fotos de campanha ou ajustes de preços)',
       'Backups automáticos e atualizações de segurança',
       'Suporte prioritário via WhatsApp — canal direto com o desenvolvedor',
     ],
