@@ -9,7 +9,7 @@ import { WA_MESSAGES } from './site';
 const PRICE_FROM = {
   lp: { BRL: 1500, EUR: 500 }, // Landing Page de Alta Conversão
   identidade: { BRL: 2500, EUR: 800 }, // Identidade + Landing Page (Carro-Chefe)
-  manutencao: { BRL: 75, EUR: 25 }, // Plano de cuidado contínuo — por mês
+  manutencao: { BRL: 180, EUR: 45 }, // Plano "Cuidamos de Tudo" — por mês
 } as const;
 
 export type Currency = 'BRL' | 'EUR';
@@ -23,7 +23,9 @@ export type Package = {
   period?: string;
   /** rótulo acima do preço (default "a partir de") */
   priceLabel?: string;
-  /** ancoragem de valor: preço do ajuste avulso (fora do plano), por moeda */
+  /** preço anual à vista (opcional), por moeda */
+  annualPrice?: { BRL: number; EUR: number };
+  /** ancoragem de valor: preço da intervenção avulsa (fora do plano), por moeda */
   anchorPrice?: { BRL: number; EUR: number };
   anchorEyebrow?: string;
   anchorBefore?: string;
@@ -77,19 +79,21 @@ export const PACKAGES: Package[] = [
     id: 'manutencao',
     name: 'Cuidamos de Tudo',
     audience:
-      'Para quem quer que a gente continue cuidando de tudo: site sempre no ar, rápido e atualizado — sem você precisar se preocupar.',
+      'Para manter sua página sempre no ar, ultrarrápida e atualizada — sem você se preocupar com tecnologia.',
     priceFrom: PRICE_FROM.manutencao,
     period: '/mês',
     priceLabel: 'plano mensal',
-    anchorPrice: { BRL: 300, EUR: 100 }, // ⚠️ EDITE AQUI o preço do ajuste avulso (fora do plano)
+    annualPrice: { BRL: 1800, EUR: 450 }, // à vista no ano
+    anchorPrice: { BRL: 150, EUR: 40 }, // ⚠️ EDITE AQUI o preço da intervenção avulsa (EUR estimado)
     anchorEyebrow: 'Compare',
-    anchorBefore: 'Avulso, fora do plano, cada ajuste sai por',
-    anchorAfter: '. No plano, a gente cuida da sua página a cada 15 dias — incluso.',
+    anchorBefore: 'Intervenções avulsas saem a partir de',
+    anchorAfter: ' por chamado. No plano contínuo, a infraestrutura e o suporte técnico estão inclusos todos os meses.',
     deliverables: [
-      'Ajustes quinzenais (2x/mês): textos, ofertas e imagens',
-      'Hospedagem gerenciada e domínio sempre no ar',
-      'Monitoramento, backups e atualizações de segurança',
-      'Suporte prioritário com resposta rápida',
+      'Hospedagem gerenciada em infraestrutura moderna (zero preocupação com servidores e DNS)',
+      'Certificado SSL e domínio sempre monitorados',
+      'Até 1 intervenção mensal de conteúdo (atualização de textos, troca de fotos de campanha ou ajustes de preços)',
+      'Backups automáticos e atualizações de segurança',
+      'Suporte prioritário via WhatsApp — canal direto com o desenvolvedor',
     ],
     ctaText: 'Quero esse cuidado',
     waMessage: WA_MESSAGES.pacoteManutencao,

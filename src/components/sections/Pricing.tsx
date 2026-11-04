@@ -23,6 +23,11 @@ function PlanCard({ p, currency }: { p: Package; currency: Currency }) {
         </span>
         <span className="text-3xl font-bold">{formatPrice(p.priceFrom[currency], currency)}</span>
         {p.period && <span className="text-sm text-[var(--color-muted)]">{p.period}</span>}
+        {p.annualPrice && (
+          <span className="mt-1 block text-xs text-[var(--color-muted)]">
+            ou {formatPrice(p.annualPrice[currency], currency)}/ano à vista
+          </span>
+        )}
       </div>
 
       {p.anchorPrice && (
