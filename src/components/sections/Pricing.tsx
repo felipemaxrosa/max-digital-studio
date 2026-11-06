@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { SectionHeading, SectionReveal, Button, RadialGlow } from "@/components/ui";
 import { SparkIcon } from "@/components/icons";
-import { PACKAGES, formatPrice, type Package, type Currency } from "@/lib/pricing";
+import { PACKAGES, ADDONS, formatPrice, type Package, type Currency } from "@/lib/pricing";
 import { waLink } from "@/lib/site";
 import { track, EVENTS } from "@/lib/analytics";
 
@@ -196,6 +196,51 @@ export function Pricing() {
           {PACKAGES.map((p, i) => (
             <SectionReveal key={p.id} delay={i * 90} className="h-full">
               <PlanCard p={p} currency={currency} />
+            </SectionReveal>
+          ))}
+        </div>
+
+        <div className="mt-6 flex flex-col gap-4">
+          {ADDONS.map((a) => (
+            <SectionReveal key={a.id}>
+              <div className="flex flex-col gap-5 rounded-[var(--radius-card)] border border-[var(--color-border-glass)] bg-[var(--color-slate)]/40 p-6 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex flex-col gap-2">
+                  <span className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-[var(--color-cyan)]">
+                    Módulo opcional
+                  </span>
+                  <h3 className="text-lg font-bold">{a.name}</h3>
+                  <p className="max-w-xl text-sm leading-relaxed text-[var(--color-muted)]">
+                    {a.description}
+                  </p>
+                  {a.note && (
+                    <p className="max-w-xl text-xs leading-relaxed text-[var(--color-muted)]/80">
+                      {a.note}
+                    </p>
+                  )}
+                </div>
+                <div className="flex shrink-0 flex-col items-start gap-3 sm:items-end">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-sm text-[var(--color-muted)]">+</span>
+                    <span className="text-2xl font-bold">
+                      {formatPrice(a.priceFrom[currency], currency)}
+                    </span>
+                    {a.priceNote && (
+                      <span className="text-xs text-[var(--color-muted)]">{a.priceNote}</span>
+                    )}
+                  </div>
+                  <Button
+                    href={waLink(a.waMessage)}
+                    variant="glass"
+                    size="sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    event={EVENTS.whatsappClick}
+                    eventParams={{ location: "addon", addon: a.id }}
+                  >
+                    {a.ctaText} →
+                  </Button>
+                </div>
+              </div>
             </SectionReveal>
           ))}
         </div>

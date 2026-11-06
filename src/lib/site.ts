@@ -51,4 +51,6 @@ export const WA_MESSAGES = {
     "Olá, Felipe! Tenho interesse no pacote Identidade + Landing Page da Max Digital Studio.",
   pacoteManutencao:
     "Olá, Felipe! Tenho interesse no plano de Retenção/Manutenção da Max Digital Studio.",
+  painelCMS:
+    "Olá, Felipe! Tenho interesse no Painel de Atualizações (CMS) para a minha landing page. Pode me explicar como funciona?",
 } as const;

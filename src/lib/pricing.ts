@@ -38,6 +38,19 @@ export type Package = {
   waMessage: string;
 };
 
+export type AddOn = {
+  id: string;
+  name: string;
+  description: string;
+  priceFrom: { BRL: number; EUR: number };
+  /** rótulo do preço, ex.: "adicional único" */
+  priceNote?: string;
+  /** nota de posicionamento (quando faz sentido contratar) */
+  note?: string;
+  ctaText: string;
+  waMessage: string;
+};
+
 export const PACKAGES: Package[] = [
   {
     id: 'lp',
@@ -98,6 +111,21 @@ export const PACKAGES: Package[] = [
     ],
     ctaText: 'Quero esse cuidado',
     waMessage: WA_MESSAGES.pacoteManutencao,
+  },
+];
+
+/** Módulos opcionais (add-ons) exibidos abaixo dos pacotes. */
+export const ADDONS: AddOn[] = [
+  {
+    id: 'cms',
+    name: 'Painel de Atualizações (CMS)',
+    description:
+      'Edite textos, fotos e preços você mesmo, em tempo real e sem tocar no código — painel moderno e intuitivo (Sanity.io).',
+    priceFrom: { BRL: 500, EUR: 125 }, // ⚠️ EDITE AQUI o adicional do painel CMS
+    priceNote: 'adicional único',
+    note: 'Valor único de implementação. Para manter o painel no ar e com suporte, é preciso um plano mensal de manutenção ativo. Ideal para quem atualiza conteúdo com frequência.',
+    ctaText: 'Quero o painel',
+    waMessage: WA_MESSAGES.painelCMS,
   },
 ];
 

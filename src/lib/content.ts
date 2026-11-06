@@ -123,6 +123,10 @@ export const FAQ = [
     q: "Já tenho um site antigo ou link de bio, é possível aproveitar o domínio?",
     a: "Sim. Fazemos toda a migração e redirecionamento do seu domínio atual para o novo site, mantendo o tráfego e garantindo que o seu público encontre a versão atualizada.",
   },
+  {
+    q: "Qual a diferença entre uma página com conteúdo fixo e uma com painel de atualizações?",
+    a: "Por padrão, entregamos a landing page com conteúdo estático — textos, fotos e botões programados direto na estrutura —, o que garante velocidade máxima, mais segurança e nota alta de conversão no celular. Se o seu negócio precisa trocar fotos, preços ou avisos com frequência, oferecemos a integração com um painel de atualizações (CMS via Sanity.io), onde você mesmo edita tudo em tempo real, sem mexer no código. A implementação do painel é um valor único de R$ 500 (Brasil) ou 125 € (Europa); para mantê-lo no ar e com suporte, é necessário um plano mensal de manutenção ativo. Para mudanças pontuais o painel não é obrigatório: elas podem ser feitas pelo nosso suporte avulso ou pelo plano mensal de manutenção.",
+  },
 ] as const;
 
 export const FINAL_CTA = {
