@@ -113,7 +113,7 @@ export const FAQ = [
   },
   {
     q: "Preciso pagar mensalidades de plataformas?",
-    a: "Não. Ao desenvolver em código limpo sob medida, você não fica refém de mensalidades caras de ferramentas como Wix, Shopify ou Elementor Pro. Você mantém apenas os custos naturais e anuais do seu próprio domínio e infraestrutura.",
+    a: "Ao desenvolver em código limpo sob medida, você não fica refém das mensalidades caras de ferramentas como Wix, Shopify ou Elementor Pro. No entanto, para que a sua página exista na internet de forma rápida e segura, ela precisa 'morar' em um servidor. O seu único custo contínuo obrigatório conosco é a taxa da Hospedagem Gerenciada (R$ 50/mês no Brasil ou 15 €/mês na Europa). Além disso, você arca apenas com a renovação anual do seu domínio próprio (ex: suaempresa.com.br) diretamente com a entidade registradora.",
   },
   {
     q: "Eu não tenho logotipo nem textos, vocês criam tudo?",

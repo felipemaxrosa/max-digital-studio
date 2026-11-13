@@ -12,6 +12,9 @@ const PRICE_FROM = {
   manutencao: { BRL: 180, EUR: 45 }, // Plano "Cuidamos de Tudo" — por mês
 } as const;
 
+/** Hospedagem gerenciada obrigatória (avulsa) — ⚠️ EDITE AQUI. Inclusa no plano "Cuidamos de Tudo". */
+export const HOSTING_PRICE = { BRL: 50, EUR: 15 };
+
 export type Currency = 'BRL' | 'EUR';
 
 export type Package = {
@@ -97,11 +100,11 @@ export const PACKAGES: Package[] = [
     period: '/mês',
     priceLabel: 'plano mensal',
     annualPrice: { BRL: 1800, EUR: 450 }, // à vista no ano
-    anchorPrice: { BRL: 150, EUR: 40 }, // ⚠️ EDITE AQUI o preço da intervenção avulsa (EUR estimado)
+    anchorPrice: HOSTING_PRICE,
     anchorEyebrow: 'Compare',
-    anchorBefore: 'Intervenções avulsas saem a partir de',
+    anchorBefore: 'A Hospedagem Gerenciada avulsa, obrigatória para o site existir, custa',
     anchorAfter:
-      ' por chamado. No plano contínuo, a infraestrutura e o suporte técnico estão inclusos todos os meses.',
+      '/mês. Neste plano, além da infraestrutura essencial, o suporte prioritário e as atualizações de conteúdo já estão inclusos.',
     deliverables: [
       'Hospedagem gerenciada em infraestrutura moderna (zero preocupação com servidores e DNS)',
       'Certificado SSL e domínio sempre monitorados',

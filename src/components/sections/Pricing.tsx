@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { SectionHeading, SectionReveal, Button, RadialGlow } from "@/components/ui";
 import { SparkIcon } from "@/components/icons";
-import { PACKAGES, ADDONS, formatPrice, type Package, type Currency } from "@/lib/pricing";
+import { PACKAGES, ADDONS, HOSTING_PRICE, formatPrice, type Package, type Currency } from "@/lib/pricing";
 import { waLink } from "@/lib/site";
 import { track, EVENTS } from "@/lib/analytics";
 
@@ -245,7 +245,18 @@ export function Pricing() {
           ))}
         </div>
 
-        <p className="mt-8 text-center font-mono text-xs text-[var(--color-muted)]">
+        <p className="mx-auto mt-8 max-w-2xl text-center text-xs leading-relaxed text-[var(--color-muted)]">
+          Todo site precisa de{" "}
+          <span className="font-semibold text-[var(--color-ink)]">Hospedagem Gerenciada</span> —{" "}
+          <span className="font-semibold text-[var(--color-ink)]">
+            {formatPrice(HOSTING_PRICE[currency], currency)}/mês
+          </span>{" "}
+          (ou já inclusa no plano{" "}
+          <span className="text-[var(--color-cyan)]">Cuidamos de Tudo</span>). O domínio próprio é
+          renovado anualmente, à parte.
+        </p>
+
+        <p className="mt-3 text-center font-mono text-xs text-[var(--color-muted)]">
           * Valores de referência. Proposta final sem compromisso após o diagnóstico.
         </p>
       </div>
