@@ -18,6 +18,7 @@ const PROJECTS = [
   { slug: "escolinha-encantada", url: "https://escolinha-encantada.vercel.app/" },
   { slug: "sol-music", url: "https://sol-music-chi.vercel.app/" },
   { slug: "musica-e-brasil", url: "https://musica-e-brasil.vercel.app/" },
+  { slug: "dona-glace", url: "https://lp-dona-glace.vercel.app/" },
 ];
 
 const VIEWPORTS = {

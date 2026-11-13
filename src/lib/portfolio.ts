@@ -52,6 +52,12 @@ export const METRICS: Record<string, Metrics> = {
     bestPractices: 100,
     seo: 100,
   },
+  'dona-glace': {
+    performance: 82,
+    accessibility: 95,
+    bestPractices: 100,
+    seo: 100,
+  },
   'escolinha-encantada': {
     performance: 84,
     accessibility: 96,
@@ -114,7 +120,6 @@ export const PROJECTS: Project[] = [
       'Apresentar o cardápio completo de forma rápida no 4G móvel e direcionar pedidos sem taxas de marketplace.',
     solution:
       'Layout visual com fotos dos pratos, categorização ágil e encaminhamento do pedido formatado direto para o WhatsApp do restaurante.',
-    featured: true,
   },
   {
     slug: 'escolinha-encantada',
@@ -145,6 +150,17 @@ export const PROJECTS: Project[] = [
       'Criar páginas imersivas com carregamento rápido de conteúdos visuais e sonoros.',
     solution:
       'Interface moderna, responsividade total e fluidez em telas de qualquer tamanho.',
+  },
+  {
+    slug: 'dona-glace',
+    name: 'Dona Glacê',
+    niche: 'Confeitaria Artesanal',
+    url: 'https://lp-dona-glace.vercel.app/',
+    challenge:
+      'Despertar desejo pelos doces artesanais e transformar a vontade em pedido — transmitindo capricho, confiança e o lado afetivo da marca.',
+    solution:
+      'Landing page com fotografia apetitosa, doces organizados por ocasião, provas sociais (10 anos, +2.000 clientes) e pedido direto no WhatsApp com a confeiteira.',
+    featured: true,
   },
 ];
 
