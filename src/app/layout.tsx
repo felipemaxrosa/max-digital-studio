@@ -56,6 +56,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
+      data-scroll-behavior="smooth"
       className={`${geist.variable} ${inter.variable} ${geistMono.variable}`}
     >
       {/* suppressHydrationWarning: extensões de browser injetam atributos no
