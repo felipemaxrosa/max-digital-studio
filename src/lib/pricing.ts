@@ -80,7 +80,7 @@ export const PACKAGES: Package[] = [
     priceFrom: PRICE_FROM.identidade,
     deadline: 'Entrega em 7 a 15 dias úteis',
     deliverables: [
-      'Mini guia de marca (logo, paleta, tipografia)',
+      'Guia de marca (logo, paleta, tipografia)',
       'Copy de vendas completa',
       'Landing page responsiva desenvolvida',
       'Integração WhatsApp + tracking',
@@ -102,7 +102,8 @@ export const PACKAGES: Package[] = [
     annualPrice: { BRL: 1800, EUR: 450 }, // à vista no ano
     anchorPrice: HOSTING_PRICE,
     anchorEyebrow: 'Compare',
-    anchorBefore: 'A Hospedagem Gerenciada avulsa, obrigatória para o site existir, custa',
+    anchorBefore:
+      'A Hospedagem Gerenciada avulsa, obrigatória para o site existir, custa',
     anchorAfter:
       '/mês. Neste plano, além da infraestrutura essencial, o suporte prioritário e as atualizações de conteúdo já estão inclusos.',
     deliverables: [
