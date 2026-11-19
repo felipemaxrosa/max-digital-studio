@@ -94,7 +94,7 @@ export const PROJECTS: Project[] = [
     slug: 'maurilio-moreira',
     name: 'Vereador Maurílio Moreira',
     niche: 'Política & Mandato',
-    url: 'https://lp-maurilio-moreira.vercel.app/',
+    url: 'https://mauriliomoreira.com.br/',
     challenge:
       'Transmitir a seriedade de um mandato e comprovar entregas reais, aproximando o vereador do eleitor sem cair no "site de político" genérico.',
     solution:

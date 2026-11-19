@@ -66,7 +66,7 @@ export const PACKAGES: Package[] = [
       'Copy persuasiva (estrutura de alta conversão)',
       'Estrutura de página sob medida',
       'Integração com WhatsApp / CRM',
-      'Tracking: Pixel + Google Analytics',
+      'Tracking: Google Analytics',
       'Código ultrarrápido e 100% responsivo',
     ],
     ctaText: 'Quero esse pacote',
