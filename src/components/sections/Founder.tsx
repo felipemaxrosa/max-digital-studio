@@ -1,6 +1,11 @@
-import { SectionHeading, SectionReveal, LogoMark, RadialGlow } from "@/components/ui";
-import { FOUNDER } from "@/lib/content";
-import { SITE } from "@/lib/site";
+import {
+  SectionHeading,
+  SectionReveal,
+  LogoMark,
+  RadialGlow,
+} from '@/components/ui';
+import { FOUNDER } from '@/lib/content';
+import { SITE } from '@/lib/site';
 
 export function Founder() {
   return (
@@ -9,10 +14,17 @@ export function Founder() {
         <div className="grid items-center gap-12 lg:grid-cols-[1.25fr_0.75fr]">
           {/* Texto */}
           <SectionReveal variant="left">
-            <SectionHeading align="left" eyebrow={FOUNDER.eyebrow} title={FOUNDER.title} />
+            <SectionHeading
+              align="left"
+              eyebrow={FOUNDER.eyebrow}
+              title={FOUNDER.title}
+            />
             <div className="mt-6 flex max-w-2xl flex-col gap-4">
               {FOUNDER.paragraphs.map((para, i) => (
-                <p key={i} className="text-base leading-relaxed text-[var(--color-muted)]">
+                <p
+                  key={i}
+                  className="text-base leading-relaxed text-[var(--color-muted)]"
+                >
                   {para}
                 </p>
               ))}
@@ -22,18 +34,23 @@ export function Founder() {
           {/* Card de autoridade */}
           <SectionReveal variant="right" delay={120}>
             <div className="relative overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border-glass)] bg-[var(--color-slate)]/60 p-8 text-center">
-              <RadialGlow className="inset-0 m-auto h-40 w-40" color="rgba(56,189,248,0.25)" />
+              <RadialGlow
+                className="inset-0 m-auto h-40 w-40"
+                color="rgba(56,189,248,0.25)"
+              />
               <LogoMark className="mx-auto h-12 w-auto drop-shadow-[0_0_24px_rgba(56,189,248,0.4)]" />
               <div className="mt-6 bg-[linear-gradient(90deg,#2563EB,#38BDF8)] bg-clip-text text-5xl font-bold text-transparent">
                 {SITE.founderYears}+
               </div>
-              <p className="mt-1 text-sm font-medium text-[var(--color-ink)]">anos de experiência</p>
+              <p className="mt-1 text-sm font-medium text-[var(--color-ink)]">
+                anos de experiência
+              </p>
               <p className="mt-1 text-xs text-[var(--color-muted)]">
                 Desenvolvimento Frontend para empresas de tecnologia
               </p>
               <div className="mt-6 border-t border-[var(--color-border-glass)] pt-4">
                 <p className="font-display text-lg font-bold">{SITE.founder}</p>
-                <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-[var(--color-muted)]">
+                <p className="font-mono text-[0.7rem] tracking-[0.18em] text-[var(--color-muted)]">
                   Fundador · {SITE.name}
                 </p>
               </div>

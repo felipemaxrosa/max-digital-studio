@@ -4,167 +4,168 @@
  */
 
 export const NAV = [
-  { label: "Projetos", href: "/portfolio" },
-  { label: "Diferenciais", href: "/#metodo" },
-  { label: "Como Funciona", href: "/#processo" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Contato", href: "/contato" },
+  { label: 'Projetos', href: '/portfolio' },
+  { label: 'Diferenciais', href: '/#metodo' },
+  { label: 'Como Funciona', href: '/#processo' },
+  { label: 'FAQ', href: '/#faq' },
+  { label: 'Contato', href: '/contato' },
 ] as const;
 
 export const HERO = {
-  eyebrow: "ESTRATÉGIA + DESIGN + ENGENHARIA",
-  titleLead: "Sites que conectam ideias a ",
-  titleAccent: "resultados reais.",
+  eyebrow: 'ESTRATÉGIA + DESIGN + ENGENHARIA',
+  titleLead: 'Sites que conectam ideias a ',
+  titleAccent: 'resultados reais.',
   subtitle:
-    "Desenvolvemos identidades visuais marcantes e landing pages de altíssima performance projetadas para converter visitantes em clientes. Design exclusivo, código sob medida e carregamento instantâneo no celular do seu cliente.",
-  ctaPrimary: "Quero uma página de alta conversão",
-  ctaSecondary: "Explorar Projetos Recentes",
+    'Desenvolvemos identidades visuais marcantes e landing pages de altíssima performance projetadas para converter visitantes em clientes. Design exclusivo, código sob medida e carregamento instantâneo no celular do seu cliente.',
+  ctaPrimary: 'Quero uma página de alta conversão',
+  ctaSecondary: 'Explorar Projetos Recentes',
   proofs: [
-    "Score 95+ no Google PageSpeed",
-    "0.4s tempo médio de carregamento",
-    "100% responsivo em qualquer tela",
+    'Score 95+ no Google PageSpeed',
+    '0.4s tempo médio de carregamento',
+    '100% responsivo em qualquer tela',
   ],
 } as const;
 
 export const CONFLICT = {
-  eyebrow: "O PROBLEMA DO MERCADO",
-  title: "O seu site está gerando clientes ou apenas consumindo o seu dinheiro?",
-  lead: "A maioria dos negócios perde vendas diariamente sem perceber. Um link confuso na bio do Instagram ou um site lento construído em plataformas pesadas afastam visitantes antes mesmo da primeira rolagem de tela.",
+  eyebrow: 'O PROBLEMA DO MERCADO',
+  title:
+    'O seu site está gerando clientes ou apenas consumindo o seu dinheiro?',
+  lead: 'A maioria dos negócios perde vendas diariamente sem perceber. Um link confuso na bio do Instagram ou um site lento construído em plataformas pesadas afastam visitantes antes mesmo da primeira rolagem de tela.',
   cards: [
     {
-      title: "A barreira dos 3 segundos",
-      text: "Mais de 50% dos visitantes fecham a página se ela demorar mais de 3 segundos para abrir no 4G. Plataformas genéricas cheias de plugins custam leads todos os dias.",
+      title: 'A barreira dos 3 segundos',
+      text: 'Mais de 50% dos visitantes fecham a página se ela demorar mais de 3 segundos para abrir no 4G. Plataformas genéricas cheias de plugins custam leads todos os dias.',
     },
     {
-      title: "O atrito visual que desvaloriza seu serviço",
-      text: "Se o seu design parece amador ou improvisado, o cliente assume automaticamente que o seu serviço também é. A primeira impressão dita o valor que você pode cobrar.",
+      title: 'O atrito visual que desvaloriza seu serviço',
+      text: 'Se o seu design parece amador ou improvisado, o cliente assume automaticamente que o seu serviço também é. A primeira impressão dita o valor que você pode cobrar.',
     },
     {
-      title: "Tráfego sem direção",
-      text: "Mandar o cliente para páginas desorganizadas ou links genéricos sem argumentos persuasivos faz o visitante se perder antes de clicar no botão de contato.",
+      title: 'Tráfego sem direção',
+      text: 'Mandar o cliente para páginas desorganizadas ou links genéricos sem argumentos persuasivos faz o visitante se perder antes de clicar no botão de contato.',
     },
   ],
 } as const;
 
 export const METHOD = {
-  eyebrow: "COMO TRABALHAMOS",
-  title: "A união entre design refinado e engenharia de software de ponta.",
+  eyebrow: 'COMO TRABALHAMOS',
+  title: 'A união entre design refinado e engenharia de software de ponta.',
   blocks: [
     {
-      title: "Engenharia Frontend Sob Medida",
-      text: "Desenvolvido linha por linha com as tecnologias mais modernas da web. Sem templates engessados ou plataformas lentas. Páginas ultraleves que ranqueiam melhor no Google e entregam a melhor experiência no celular.",
+      title: 'Engenharia Frontend Sob Medida',
+      text: 'Desenvolvido linha por linha com as tecnologias mais modernas da web. Sem templates engessados ou plataformas lentas. Páginas ultraleves que ranqueiam melhor no Google e entregam a melhor experiência no celular.',
       featured: true,
     },
     {
-      title: "Identidade Visual & Design System",
-      text: "Cores, tipografia, espaçamentos e hierarquia visual projetados para transmitir sofisticação, credibilidade executiva e autoridade imediata.",
+      title: 'Identidade Visual & Design System',
+      text: 'Cores, tipografia, espaçamentos e hierarquia visual projetados para transmitir sofisticação, credibilidade executiva e autoridade imediata.',
     },
     {
-      title: "Copywriting de Alta Persuasão",
-      text: "Estrutura textual pensada para conduzir a leitura, quebrar objeções e direcionar o visitante diretamente para uma conversa de vendas no WhatsApp.",
+      title: 'Copywriting de Alta Persuasão',
+      text: 'Estrutura textual pensada para conduzir a leitura, quebrar objeções e direcionar o visitante diretamente para uma conversa de vendas no WhatsApp.',
     },
     {
-      title: "Rastreamento & Analytics Integrados",
-      text: "Configuração de Pixel, Google Analytics e eventos de clique para você acompanhar métricas e saber de onde vêm os contatos.",
+      title: 'Rastreamento & Analytics Integrados',
+      text: 'Configuração de Pixel, Google Analytics e eventos de clique para você acompanhar métricas e saber de onde vêm os contatos.',
     },
   ],
 } as const;
 
 export const PROCESS = {
-  eyebrow: "FLUXO CLARO E TRANSPARENTE",
-  title: "Do alinhamento inicial ao site no ar em 4 etapas diretas.",
+  eyebrow: 'FLUXO CLARO E TRANSPARENTE',
+  title: 'Do alinhamento inicial ao site no ar em 4 etapas diretas.',
   steps: [
     {
-      n: "01",
-      title: "Diagnóstico & Estratégia",
-      text: "Mapeamos seu negócio, perfil de cliente e concorrentes para definir o ângulo de venda e a estrutura necessária.",
+      n: '01',
+      title: 'Diagnóstico & Estratégia',
+      text: 'Mapeamos seu negócio, perfil de cliente e concorrentes para definir o ângulo de venda e a estrutura necessária.',
     },
     {
-      n: "02",
-      title: "Identidade Visual & Textos de Venda",
-      text: "Criamos o guia visual (logo, paleta, tipografia) e redigimos a copy persuasiva da sua página para aprovação prévia.",
+      n: '02',
+      title: 'Identidade Visual & Textos de Venda',
+      text: 'Criamos o guia visual (logo, paleta, tipografia) e redigimos a copy persuasiva da sua página para aprovação prévia.',
     },
     {
-      n: "03",
-      title: "Desenvolvimento & Performance",
-      text: "Construção do código sob medida, garantindo responsividade mobile, otimizações de SEO e velocidade máxima.",
+      n: '03',
+      title: 'Desenvolvimento & Performance',
+      text: 'Construção do código sob medida, garantindo responsividade mobile, otimizações de SEO e velocidade máxima.',
     },
     {
-      n: "04",
-      title: "Integração & Publicação",
-      text: "Configuração do seu domínio oficial, testes de envio para o WhatsApp, validação das tags de rastreamento e entrega final.",
+      n: '04',
+      title: 'Integração & Publicação',
+      text: 'Configuração do seu domínio oficial, testes de envio para o WhatsApp, validação das tags de rastreamento e entrega final.',
     },
   ],
 } as const;
 
 export const FOUNDER = {
-  eyebrow: "QUEM CONSTRÓI SEU PROJETO",
-  title: "Seu projeto desenhado e programado por quem domina a técnica.",
+  eyebrow: 'QUEM CONSTRÓI SEU PROJETO',
+  title: 'Seu projeto desenhado e programado por quem domina a técnica.',
   paragraphs: [
-    "Muito além de templates prontos ou ferramentas automáticas, o Max Digital Studio nasceu com a premissa de entregar projetos digitais executados com precisão.",
-    "À frente do estúdio está Felipe, com mais de 6 anos de experiência sólida em Desenvolvimento Frontend para empresas de tecnologia. Essa bagagem técnica assegura que sua página não terá telas quebradas, botões com falha ou lentidão crônica. Cada linha de código e elemento visual são tratados como ativos estratégicos para a sua empresa.",
+    'Muito além de templates prontos ou ferramentas automáticas, o Max Digital Studio nasceu com a premissa de entregar projetos digitais executados com precisão.',
+    'À frente do estúdio está Felipe Rosa, com mais de 6 anos de experiência sólida em Desenvolvimento Frontend para empresas de tecnologia. Essa bagagem técnica assegura que sua página não terá telas quebradas, botões com falha ou lentidão crônica. Cada linha de código e elemento visual são tratados como ativos estratégicos para a sua empresa.',
   ],
 } as const;
 
 export const FAQ = [
   {
-    q: "Quanto tempo leva para o projeto ser entregue?",
-    a: "O prazo médio para entrega de uma Landing Page com Identidade Visual é de 7 a 15 dias úteis, com etapas de validação intermediárias com você.",
+    q: 'Quanto tempo leva para o projeto ser entregue?',
+    a: 'O prazo médio para entrega de uma Landing Page com Identidade Visual é de 7 a 15 dias úteis, com etapas de validação intermediárias com você.',
   },
   {
-    q: "Preciso pagar mensalidades de plataformas?",
+    q: 'Preciso pagar mensalidades de plataformas?',
     a: "Ao desenvolver em código limpo sob medida, você não fica refém das mensalidades caras de ferramentas como Wix, Shopify ou Elementor Pro. No entanto, para que a sua página exista na internet de forma rápida e segura, ela precisa 'morar' em um servidor. O seu único custo contínuo obrigatório conosco é a taxa da Hospedagem Gerenciada (R$ 50/mês no Brasil ou 15 €/mês na Europa). Além disso, você arca apenas com a renovação anual do seu domínio próprio (ex: suaempresa.com.br) diretamente com a entidade registradora.",
   },
   {
-    q: "Eu não tenho logotipo nem textos, vocês criam tudo?",
-    a: "Sim. Nosso pacote principal inclui tanto a criação da Identidade Visual mínima (logo, paleta de cores e tipografia) quanto a redação de vendas completa (copywriting).",
+    q: 'Eu não tenho logotipo nem textos, vocês criam tudo?',
+    a: 'Sim. Nosso pacote principal inclui tanto a criação da Identidade Visual mínima (logo, paleta de cores e tipografia) quanto a redação de vendas completa (copywriting).',
   },
   {
-    q: "Já tenho um site antigo ou link de bio, é possível aproveitar o domínio?",
-    a: "Sim. Fazemos toda a migração e redirecionamento do seu domínio atual para o novo site, mantendo o tráfego e garantindo que o seu público encontre a versão atualizada.",
+    q: 'Já tenho um site antigo ou link de bio, é possível aproveitar o domínio?',
+    a: 'Sim. Fazemos toda a migração e redirecionamento do seu domínio atual para o novo site, mantendo o tráfego e garantindo que o seu público encontre a versão atualizada.',
   },
   {
-    q: "Qual a diferença entre uma página com conteúdo fixo e uma com painel de atualizações?",
-    a: "Por padrão, entregamos a landing page com conteúdo estático — textos, fotos e botões programados direto na estrutura —, o que garante velocidade máxima, mais segurança e nota alta de conversão no celular. Se o seu negócio precisa trocar fotos, preços ou avisos com frequência, oferecemos a integração com um painel de atualizações (CMS via Sanity.io), onde você mesmo edita tudo em tempo real, sem mexer no código. A implementação do painel é um valor único de R$ 500 (Brasil) ou 125 € (Europa); para mantê-lo no ar e com suporte, é necessário um plano mensal de manutenção ativo. Para mudanças pontuais o painel não é obrigatório: elas podem ser feitas pelo nosso suporte avulso ou pelo plano mensal de manutenção.",
+    q: 'Qual a diferença entre uma página com conteúdo fixo e uma com painel de atualizações?',
+    a: 'Por padrão, entregamos a landing page com conteúdo estático — textos, fotos e botões programados direto na estrutura —, o que garante velocidade máxima, mais segurança e nota alta de conversão no celular. Se o seu negócio precisa trocar fotos, preços ou avisos com frequência, oferecemos a integração com um painel de atualizações (CMS via Sanity.io), onde você mesmo edita tudo em tempo real, sem mexer no código. A implementação do painel é um valor único de R$ 500 (Brasil) ou 125 € (Europa); para mantê-lo no ar e com suporte, é necessário um plano mensal de manutenção ativo. Para mudanças pontuais o painel não é obrigatório: elas podem ser feitas pelo nosso suporte avulso ou pelo plano mensal de manutenção.',
   },
 ] as const;
 
 export const FINAL_CTA = {
-  title: "Pronto para transformar a presença digital do seu negócio?",
-  text: "Agende uma conversa rápida e receba um diagnóstico da sua presença digital atual sem compromisso.",
-  cta: "Solicitar Proposta pelo WhatsApp",
+  title: 'Pronto para transformar a presença digital do seu negócio?',
+  text: 'Agende uma conversa rápida e receba um diagnóstico da sua presença digital atual sem compromisso.',
+  cta: 'Solicitar Proposta pelo WhatsApp',
   microcopy:
-    "Atendimento direto com o especialista • Resposta em até 2 horas em horário comercial",
+    'Atendimento direto com o especialista • Resposta em até 2 horas em horário comercial',
 } as const;
 
 export const ABOUT = {
-  eyebrow: "SOBRE O ESTÚDIO",
-  title: "Engenharia e design a serviço do seu resultado.",
+  eyebrow: 'SOBRE O ESTÚDIO',
+  title: 'Engenharia e design a serviço do seu resultado.',
   intro:
-    "A Max Digital Studio é um estúdio digital que transforma negócios em marcas fortes e páginas que realmente vendem. Trabalho remoto para o Brasil e Portugal, com padrão de engenharia de produto — não de template.",
+    'A Max Digital Studio é um estúdio digital que transforma negócios em marcas fortes e páginas que realmente vendem. Trabalho remoto para o Brasil e Portugal, com padrão de engenharia de produto — não de template.',
   positioning: {
-    eyebrow: "PARA QUEM É",
-    title: "Feito para quem leva o próprio negócio a sério.",
+    eyebrow: 'PARA QUEM É',
+    title: 'Feito para quem leva o próprio negócio a sério.',
     items: [
       {
-        title: "Negócios novos",
-        text: "Quem está começando e quer nascer com cara de profissional desde o primeiro clique.",
+        title: 'Negócios novos',
+        text: 'Quem está começando e quer nascer com cara de profissional desde o primeiro clique.',
       },
       {
-        title: "Prestadores de serviço",
-        text: "Quem vive de indicação e precisa de uma presença digital que feche no WhatsApp.",
+        title: 'Prestadores de serviço',
+        text: 'Quem vive de indicação e precisa de uma presença digital que feche no WhatsApp.',
       },
       {
-        title: "Marcas que querem escalar",
-        text: "Quem já tem identidade, mas precisa de uma página rápida e persuasiva que converta de verdade.",
+        title: 'Marcas que querem escalar',
+        text: 'Quem já tem identidade, mas precisa de uma página rápida e persuasiva que converta de verdade.',
       },
     ],
   },
 } as const;
 
 export const FOOTER = {
-  tagline: "Identidade Visual & Landing Pages",
-  location: "Brasil e Portugal",
+  tagline: 'Identidade Visual & Landing Pages',
+  location: 'Brasil e Portugal',
   signature:
-    "© 2026 Max Digital Studio. Todos os direitos reservados. Código proprietário.",
+    '© 2026 Max Digital Studio. Todos os direitos reservados. Código proprietário.',
 } as const;
