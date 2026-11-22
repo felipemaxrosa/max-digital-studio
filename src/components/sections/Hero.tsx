@@ -81,8 +81,8 @@ export function Hero() {
               <div className="absolute left-0 top-[10%] w-[46%] [transform:rotateY(-22deg)_rotateX(8deg)]">
                 <div className="motion-safe:animate-float" style={{ animationDelay: "0.9s" }}>
                   <PhoneMockup
-                    src="/portfolio/sol-music-mobile.png"
-                    alt="Projeto Sol Music em dispositivo móvel"
+                    src="/portfolio/maurilio-moreira-mobile.png"
+                    alt="Projeto Vereador Maurílio Moreira em dispositivo móvel"
                   />
                 </div>
               </div>
