@@ -48,16 +48,15 @@ export default function ScrollReveal() {
       pending.forEach((e) => io!.observe(e));
     };
 
-    if (document.readyState === "complete") {
-      raf = requestAnimationFrame(run);
-    } else {
-      window.addEventListener("load", run, { once: true });
-    }
+    // Revela logo após a hidratação (este useEffect já roda pós-hidratação),
+    // num rAF para garantir layout. NÃO esperar `window.load`: ele só dispara
+    // após TODAS as imagens, o que deixava o conteúdo abaixo da dobra invisível
+    // por segundos em cargas lentas.
+    raf = requestAnimationFrame(run);
 
     return () => {
       io?.disconnect();
       if (raf) cancelAnimationFrame(raf);
-      window.removeEventListener("load", run);
     };
   }, [pathname]);
 
