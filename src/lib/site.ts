@@ -53,3 +53,26 @@ export const WA_MESSAGES = {
   painelCMS:
     'Olá, Felipe! Tenho interesse no Painel de Atualizações (CMS) para a minha landing page. Pode me explicar como funciona?',
 } as const;
+
+/**
+ * Mensagens por canal de origem — usadas nos links de atribuição
+ * /contato/<slug> (bios/perfis de cada rede). Cada mensagem nomeia o
+ * canal para que a origem do lead apareça já na conversa do WhatsApp.
+ */
+export const CONTACT_CHANNEL_MESSAGES = {
+  instagram:
+    'Ola! Conheci a Max Digital Studio pelo Instagram e gostaria de saber mais sobre os servicos.',
+  facebook:
+    'Ola! Conheci a Max Digital Studio pelo Facebook e gostaria de saber mais sobre os servicos.',
+  google:
+    'Ola! Conheci a Max Digital Studio pelo Google e gostaria de conversar sobre um projeto.',
+  linkedin:
+    'Ola! Conheci a Max Digital Studio pelo LinkedIn e gostaria de conversar sobre um projeto.',
+  tiktok:
+    'Ola! Conheci a Max Digital Studio pelo TikTok e gostaria de saber mais sobre os servicos.',
+  youtube:
+    'Ola! Conheci a Max Digital Studio pelo YouTube e gostaria de saber mais sobre os servicos.',
+  site: 'Ola! Acessei o site da Max Digital Studio e gostaria de conversar sobre um projeto.',
+} as const;
+
+export type ContactChannel = keyof typeof CONTACT_CHANNEL_MESSAGES;
