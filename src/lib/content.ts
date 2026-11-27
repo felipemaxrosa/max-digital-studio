@@ -8,6 +8,7 @@ export const NAV = [
   { label: 'Diferenciais', href: '/#metodo' },
   { label: 'Como Funciona', href: '/#processo' },
   { label: 'FAQ', href: '/#faq' },
+  { label: 'Briefing', href: '/briefing' },
   { label: 'Contato', href: '/contato' },
 ] as const;
 

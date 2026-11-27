@@ -20,6 +20,18 @@ export const EVENTS = {
   portfolioView: "portfolio_view",
   currencyChange: "currency_change",
   proposalSubmit: "proposal_submit",
+
+  // Central de Briefings (§20). NUNCA enviar PII nos params — apenas
+  // service_type, step_number/step_name, total_steps, locale, form_version,
+  // error_code e UTMs sanitizadas.
+  briefingView: "briefing_view",
+  briefingServiceSelected: "briefing_service_selected",
+  briefingStart: "briefing_start",
+  briefingStepCompleted: "briefing_step_completed",
+  briefingReviewView: "briefing_review_view",
+  briefingSubmitSuccess: "briefing_submit_success",
+  briefingSubmitError: "briefing_submit_error",
+  briefingWhatsappClick: "briefing_whatsapp_click",
 } as const;
 
 export type AnalyticsEvent = (typeof EVENTS)[keyof typeof EVENTS];
@@ -33,6 +45,8 @@ export type EventParams = Record<string, string | number | boolean | undefined>;
 const META_STANDARD: Partial<Record<AnalyticsEvent, string>> = {
   [EVENTS.proposalSubmit]: "Lead",
   [EVENTS.whatsappClick]: "Contact",
+  [EVENTS.briefingSubmitSuccess]: "Lead",
+  [EVENTS.briefingWhatsappClick]: "Contact",
 };
 
 /** Envia um evento ao GA4 e ao Meta Pixel. No-op para o que ainda não carregou. */

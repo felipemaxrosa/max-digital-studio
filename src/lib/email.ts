@@ -4,8 +4,9 @@
  */
 import { SITE } from "./site";
 import { pacoteLabel, type ProposalInput } from "./proposal";
+import type { SummarySection } from "./briefing/summary";
 
-function esc(s: string): string {
+export function esc(s: string): string {
   return s
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
@@ -70,4 +71,88 @@ export function buildEmailHtml(v: ProposalInput): string {
 </td></tr>
 </table>
 </body></html>`;
+}
+
+// ── Central de Briefings ─────────────────────────────────────────
+
+const shell = (inner: string) => `<!doctype html>
+<html lang="pt-BR"><body style="margin:0;padding:0;background:#0b0d12;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0b0d12;padding:24px 12px;font-family:Arial,Helvetica,sans-serif;">
+<tr><td align="center">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;background:#ffffff;border-radius:16px;overflow:hidden;">
+  <tr><td style="background:#090A0F;padding:26px 32px;" align="left">
+    <img src="${SITE.url}/brand/logo-lockup.png" alt="Max Digital Studio" height="32" style="height:32px;display:block;border:0;" />
+  </td></tr>
+  <tr><td style="height:4px;background:#2563EB;background:linear-gradient(90deg,#2563EB,#38BDF8);font-size:0;line-height:0;">&nbsp;</td></tr>
+  ${inner}
+  <tr><td style="padding:16px 32px;background:#f4f6f9;color:#8a93a1;font-size:12px;" align="center">
+    Enviado pela Central de Projetos <a href="${SITE.url}/briefing" style="color:#2563EB;text-decoration:none;">maxdigitalstudio.com.br</a>
+  </td></tr>
+</table>
+</td></tr>
+</table>
+</body></html>`;
+
+function sectionHtml(section: SummarySection): string {
+  const rows = section.items.map((i) => row(i.label, i.value)).join("");
+  return `<div style="margin-top:22px;">
+    <div style="font-size:12px;font-weight:bold;text-transform:uppercase;letter-spacing:0.04em;color:#2563EB;margin-bottom:6px;">${esc(section.title)}</div>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${rows}</table>
+  </div>`;
+}
+
+/** E-mail interno (Max Digital Studio) — resumo completo do briefing recebido. */
+export function buildBriefingInternalHtml(input: {
+  serviceLabel: string;
+  protocol: string;
+  receivedAt: string;
+  contact: { nome: string; email: string; whatsapp: string; empresa: string; pais: string };
+  sections: SummarySection[];
+}): string {
+  const { contact } = input;
+  const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact.email);
+  const replyHref = isEmail
+    ? `mailto:${contact.email}`
+    : `https://wa.me/${contact.whatsapp.replace(/\D/g, "")}`;
+  const replyLabel = isEmail ? "Responder por e-mail" : "Responder no WhatsApp";
+
+  const meta = [
+    row("Protocolo", input.protocol),
+    row("Serviço", input.serviceLabel),
+    row("Recebido em", input.receivedAt),
+    row("País", contact.pais),
+  ].join("");
+
+  const body = input.sections.map(sectionHtml).join("");
+
+  const inner = `<tr><td style="padding:30px 32px;">
+    <h1 style="margin:0 0 4px;font-size:20px;color:#0b0d12;">Novo briefing recebido 🎯</h1>
+    <p style="margin:0 0 22px;font-size:14px;color:#5b6472;">${esc(input.serviceLabel)} — ${esc(contact.empresa || contact.nome)}</p>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${meta}</table>
+    ${body}
+    <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top:26px;"><tr><td style="border-radius:10px;background:#2563EB;background:linear-gradient(90deg,#2563EB,#38BDF8);">
+      <a href="${replyHref}" style="display:inline-block;padding:12px 26px;font-size:14px;font-weight:bold;color:#ffffff;text-decoration:none;">${replyLabel} &rarr;</a>
+    </td></tr></table>
+  </td></tr>`;
+  return shell(inner);
+}
+
+/** E-mail de confirmação ao cliente — sem promessa de prazo (§18). */
+export function buildBriefingClientHtml(input: {
+  nome: string;
+  serviceLabel: string;
+  protocol: string;
+}): string {
+  const firstName = input.nome.split(" ")[0] || "tudo bem";
+  const inner = `<tr><td style="padding:30px 32px;">
+    <h1 style="margin:0 0 14px;font-size:20px;color:#0b0d12;">Recebemos seu briefing ✓</h1>
+    <p style="margin:0 0 14px;font-size:14px;color:#0b0d12;line-height:1.6;">Olá, ${esc(firstName)}.</p>
+    <p style="margin:0 0 14px;font-size:14px;color:#5b6472;line-height:1.6;">Recebemos as informações sobre o seu projeto. Nossa equipe analisará o briefing para compreender seus objetivos e identificar a solução mais adequada para o seu negócio.</p>
+    <p style="margin:0 0 14px;font-size:14px;color:#5b6472;line-height:1.6;">Entraremos em contato pelos canais informados para conversar sobre os próximos passos.</p>
+    <p style="margin:0 0 22px;font-size:14px;color:#5b6472;line-height:1.6;">Obrigado por escolher a Max Digital Studio.</p>
+    <table role="presentation" cellpadding="0" cellspacing="0" style="margin:8px 0 4px;"><tr><td style="background:#f4f6f9;border-radius:10px;padding:12px 16px;font-size:13px;color:#5b6472;">
+      ${esc(input.serviceLabel)} · Protocolo <strong style="color:#0b0d12;">${esc(input.protocol)}</strong>
+    </td></tr></table>
+  </td></tr>`;
+  return shell(inner);
 }
