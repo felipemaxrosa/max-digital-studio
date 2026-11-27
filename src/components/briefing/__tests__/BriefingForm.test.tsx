@@ -22,7 +22,8 @@ async function fillContactStep(user: ReturnType<typeof userEvent.setup>) {
   await user.type(screen.getByLabelText("Nome do negócio"), "Estética Bela");
   await user.type(screen.getByLabelText("E-mail"), "maria@bela.com");
   await user.type(screen.getByLabelText("WhatsApp"), "11999998888");
-  await user.selectOptions(screen.getByLabelText("País"), "BR");
+  await user.click(screen.getByRole("combobox", { name: "País" }));
+  await user.click(screen.getByRole("option", { name: "Brasil" }));
   await user.type(screen.getByLabelText("Segmento"), "Estética");
 }
 

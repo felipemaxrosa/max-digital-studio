@@ -18,7 +18,8 @@ test("diagnóstico: preenche, revisa e envia", async ({ page }) => {
   await page.getByLabel("Nome do negócio").fill("Studio QA");
   await page.getByLabel("E-mail").fill("qa@example.com");
   await page.getByLabel("WhatsApp").fill("11999990000");
-  await page.getByLabel("País").selectOption("BR");
+  await page.getByRole("combobox", { name: "País" }).click();
+  await page.getByRole("option", { name: "Brasil" }).click();
   await page.getByLabel("Segmento").fill("Teste");
   await page.getByRole("button", { name: /Continuar/ }).click();
 

@@ -6,6 +6,7 @@
  * fieldset/legend para grupos, erros com aria.
  */
 import type { Answers, AnswerValue, FieldConfig } from "@/lib/briefing/types";
+import { SelectField } from "./select-field";
 
 const ERROR = "#FB7185";
 
@@ -115,26 +116,18 @@ function Control({
       );
 
     case "select":
-    case "country": {
-      const opts = field.options ?? [];
+    case "country":
       return (
-        <select
+        <SelectField
           id={field.name}
-          className={inputCls(error)}
           value={str}
-          aria-describedby={describedBy}
-          aria-invalid={error ? true : undefined}
-          onChange={(e) => onChange(field.name, e.target.value)}
-        >
-          <option value="">Selecione…</option>
-          {opts.map((o) => (
-            <option key={o.value} value={o.value}>
-              {o.label}
-            </option>
-          ))}
-        </select>
+          options={field.options ?? []}
+          placeholder={field.placeholder ?? "Selecione…"}
+          error={error}
+          describedBy={describedBy}
+          onChange={(v) => onChange(field.name, v)}
+        />
       );
-    }
 
     case "radio":
       return <RadioGroup field={field} value={str} answers={answers} onChange={onChange} />;
